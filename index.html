@@ -2,10 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=800, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=1400">
 <title>imaginalis.ru</title>
 <style type="text/css">
 body {
@@ -16,7 +13,8 @@ body {
     font-family: "Times New Roman", Times, serif;
     font-size: 16px;
     margin: 0;
-    min-width: 800px;
+    min-width: 1400px;
+    position: relative;
     padding: 130px 0 0 0;
     min-height: 100vh;
     box-sizing: border-box;
@@ -28,7 +26,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    min-width: 800px;
+    min-width: 1400px;
     height: 116px;
     background-color: #2a1a10;
     background-image: url("bg2.jpg"); 
@@ -116,7 +114,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 .btn-old:hover { background-color: #ffb866; color: #3b2410; }
 .btn-old:active { border-style: inset; }
 .zemlya {
-    min-width: 800px;
+    min-width: 1400px;
     height: 189px;
     margin-top: auto;
     flex-shrink: 0;
@@ -153,6 +151,126 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     color: #fff3dc;
     text-shadow: 1px 1px 0 #1a1208;
 }
+
+/* ===== ПОЛОСЫ ПРОКРУТКИ (и у страницы, и у боковых окон) ===== */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+::-webkit-scrollbar-track {
+    background-color: #2a1a10;
+    border-left: 1px solid #6a3a12;
+    box-shadow: inset 2px 0 4px rgba(0,0,0,0.7);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #f2a354;
+    border: 1px solid #2a1a10;
+    box-shadow: inset 1px 1px 0 #ffd9a0, inset -1px -1px 0 #a8561a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffb866;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: #2a1a10;
+}
+/* для Firefox */
+@supports not selector(::-webkit-scrollbar) {
+    html, .skroll {
+        scrollbar-color: #f2a354 #2a1a10;
+    }
+}
+
+/* ===== БОКОВЫЕ ОКНА (вдавленные, с независимой прокруткой) ===== */
+.okno {
+    position: absolute;
+    top: 150px;
+    height: 520px; /* высота окон: подгоните под высоту таблицы */
+    width: 260px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    border: 4px inset #b8651f;
+    background-color: #6f6a52;
+    background-repeat: repeat;
+    box-shadow: inset 0 0 28px 6px rgba(10,5,0,0.7);
+}
+/* 380px (пол-таблицы) + 4px рамка + 24px зазор = 408px от центра страницы */
+#poeziya {
+    right: 50%;
+    margin-right: 408px;
+    background-image: linear-gradient(rgba(20,12,4,0.30),rgba(20,12,4,0.30)), url("bg8.png"); /* мозаика окна поэзии */
+}
+#etyudy {
+    left: 50%;
+    margin-left: 408px;
+    background-image: linear-gradient(rgba(20,12,4,0.30),rgba(20,12,4,0.30)), url("bg9.png"); /* мозаика окна этюдов */
+}
+.okno h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 6px 12px 4px 12px;
+    background-color: rgba(20,12,4,0.45);
+    border-bottom: 2px groove #c9631a;
+    text-shadow: 1px 1px 0 #2a2008;
+}
+.skroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 10px 12px 12px;
+}
+
+/* поэзия */
+.stih {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #2a2008;
+}
+.data {
+    text-align: right;
+    font-style: italic;
+    color: #ffc77a;
+    margin-top: 6px;
+}
+.razdel {
+    text-align: center;
+    margin: 14px 0;
+}
+.razdel img {
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+/* этюды */
+.etyud {
+    margin: 0 0 18px 0;
+}
+.ramka {
+    border: 3px ridge #c9631a;
+    background-color: #2a1a10;
+    padding: 4px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
+.ramka img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px inset #8c8470;
+}
+.podpis {
+    margin-top: 6px;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+    color: #fff0d2;
+    text-shadow: 1px 1px 0 #2a1a08;
+}
 </style>
 </head>
 <body>
@@ -161,6 +279,103 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 <div id="shapka">
     <a href="index.html"><img src="header.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
 </div>
+
+
+<!-- ========== ЛЕВОЕ ОКНО: ПОЭЗИЯ ==========
+     Чтобы добавить стихотворение, скопируйте пару блоков
+     <div class="razdel">...</div> + <div class="stih">...</div>
+     и вставьте в конец окна (перед закрывающим </div></div>). -->
+<div class="okno" id="poeziya">
+    <h2>Поэзия</h2>
+    <div class="skroll">
+
+        <div class="stih">
+            В их волосах - оливковых - разорванные нити,<br>
+            В них пепел прерий, яд и терпкость темной соли.<br>
+            Смуглянками зовут их дети лисьи.<br>
+            Они ведут сквозь анфилады суеверий<br>
+            К триумфу высшей, запредельной боли.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Утопает иссушенный фаллос, путаясь в тине титанических вод, - вместе с ним огрубленный разум мокротой пузырчатой - в кибелический грот.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Сними свои шпильно-красные туфли! Окинь бирюзовым ногтем окружающий мир за класс первый, и когда ты, увидишь гангрену знамен, завопи не стесняясь -<br>
+            «Я ЛЮБЛЮ СОВ, ЖУРАВЛЕЙ И ВОРОН!!!»
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            В ленивой сонливости из обезвоженных кондиционеров плюются каплями голодного пота из резво вращающихся в полуденном салатово-резком зное страдающие вентиля. Они жадненько наползают друг на дружку, ревниво уворачиваясь обступая ветра, грохаются стеклянной дробью на алюминиевые головы карнизов, стремясь со-слоиться. Солнце, неразборчивое в своей щекотке, кажется &lt;…им…&gt; нависшей мельтешащей лампочкой
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Запппылывшие личище, коренасто-упругие щеки, шея, неуклюже взбитое брюхо с маленькой, вздымающейся по сторонам у солнечного сплетения, гинекомастией, что рассасывается довлеющим фоном силуэта щегла, идущего улыбчиво, переминаясь, а в солоноватых руках, сладко запотевших, два многоразовых трехлитровых бидона с молоком, на горлышке которых язвят встречным воздухом коричневые нитки, покусывая грубые костяшки.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Разъедай! Разъедай! - вдохновленное тело.<br>
+            Разъедай до излишков волос,<br>
+            Убегая коснись панцирями бело-саженцев опухающих Роз!<br>
+            На брусчатке мощенной грибами, на пруду - заволоченном рвами<br>
+            Отпускала Цирцея зубо-скаленных Львов!
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Я - валик, я - шпатель, я строительный грунт, я известняк, я глина, я - повивальный пупок!
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            .Вы — фурия. На фоне надуманных вялых попыток, беспомощно-стерильных, обескровленно-пестрых капканов — ваше имя из 8 букв на смуглой латинской коже.
+            <div class="data">(1916)</div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ========== ПРАВОЕ ОКНО: ЭТЮДЫ / ЗАРИСОВКИ / НАБРОСКИ ==========
+     Чтобы добавить набросок, скопируйте блок <div class="etyud">...</div>
+     и поменяйте имя файла (src) и подпись. -->
+<div class="okno" id="etyudy">
+    <h2>Этюды</h2>
+    <div class="skroll">
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud1.jpg" width="440" height="560" alt="Этюд 1"></div>
+            <div class="podpis">Этюд I</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud2.jpg" width="440" height="320" alt="Этюд 2"></div>
+            <div class="podpis">Этюд II</div>
+        </div>
+
+    </div>
+</div>
+
 
 <center style="margin-bottom:30px;">
 <table class="main" cellpadding="0" cellspacing="0">
@@ -187,7 +402,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 
             <div class="box-inset">
                 <b>О сути раздела:</b><br>
-                <b>imaginalis.ru</b> является дочерним сайтом <a href="https://hermeticum.ru">hermeticum.ru</a>, но это отдельное и самостоятельное пространство. Если основной ресурс посвящён герметической традиции в целом, то здесь собирается то, что относится к области <i>mundus imaginalis</i> & мира anima mundi &mdash; миру живого воображения, образов и созерцания.
+                <b>imaginalis.ru</b> является дочерним сайтом <a href="https://hermeticum.ru">hermeticum.ru</a>, но это отдельное и самостоятельное пространство. Если основной ресурс посвящён герметической традиции в целом, то здесь собирается то, что относится к области <i>mundus imaginalis</i> &amp; мира anima mundi &mdash; миру живого воображения, образов и созерцания.
             </div>
 
             <p>Пока здесь идут работы, основные материалы доступны на родительском портале:</p>
