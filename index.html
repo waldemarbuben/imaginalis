@@ -48,40 +48,55 @@ table.main {
 td.sidebar {
     width: 190px;
     background-color: #8c8470;
-    background-image: url("bg3.jpg"); /* мозаика левого блока */
+    background-image: linear-gradient(rgba(20,12,4,0.22),rgba(20,12,4,0.22)), url("bg3.jpg"); /* мозаика левого блока */
     background-repeat: repeat;
     border-right: 2px groove #c9631a;
     padding: 14px;
     vertical-align: top;
     font-family: Verdana, Arial, sans-serif;
     font-size: 11px;
-    color: #5a2e10;
+    color: #fff0d2;
+    text-shadow: 1px 1px 0 #2a1a08;
 }
 td.content {
     background-color: #7a7454;
-    background-image: url("bg4.jpg"); /* мозаика правого блока */
+    background-image: linear-gradient(rgba(20,12,4,0.25),rgba(20,12,4,0.25)), url("bg4.jpg"); /* мозаика правого блока */
     background-repeat: repeat;
     padding: 22px 28px;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #2a2008;
     vertical-align: top;
     line-height: 1.5;
 }
 h2 {
     font-size: 22px;
     font-weight: normal;
-    color: #a63f06;
+    color: #ffc77a;
     margin: 0 0 12px 0;
-    border-bottom: 1px solid #e0a35e;
+    border-bottom: 1px solid #d99a52;
     padding-bottom: 4px;
 }
 a { color: #b8470a; text-decoration: underline; }
 a:hover { color: #7a2a00; background-color: #ffd9a0; }
 a:visited { color: #8a3a14; }
+td.sidebar a, td.content a { color: #ffd47a; }
+td.sidebar a:visited, td.content a:visited { color: #f0b866; }
+td.sidebar a:hover, td.content a:hover { color: #fff6e0; background-color: #6a3a12; }
+td.content .box-inset a { color: #b8470a; text-shadow: none; }
+td.content .box-inset a:visited { color: #8a3a14; }
+td.content .box-inset a:hover { color: #7a2a00; background-color: #ffd9a0; }
+td.content a.btn-old, td.content a.btn-old:visited { color: #3b2410; text-shadow: none; }
+td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 
 .box-inset {
-    background-color: #ffe7bf;
+    background-color: #d8c89a;
+    background-image: linear-gradient(rgba(255,243,220,0.45),rgba(255,243,220,0.45)), url("bg5.jpg"); /* мозаика плашки «О сути раздела» */
+    background-repeat: repeat;
     border: 2px inset #d9954a;
     padding: 10px 14px;
     margin: 16px 0;
+    color: #3b2410;
+    text-shadow: none;
 }
 .btn-old {
     display: inline-block;
@@ -106,6 +121,18 @@ a:visited { color: #8a3a14; }
     color: #5a2a08;
 }
 .podval a { color: #7a2a00; }
+.plashka {
+    background-color: #3a3c40;
+    background-image: linear-gradient(rgba(15,10,5,0.55),rgba(15,10,5,0.55)), url("bg6.jpg"); /* мозаика плашек с надписями */
+    background-repeat: repeat;
+    border: 2px inset #8c8470;
+    padding: 9px 11px;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #1a1208;
+}
 </style>
 </head>
 <body>
@@ -119,17 +146,16 @@ a:visited { color: #8a3a14; }
 <table class="main" cellpadding="0" cellspacing="0">
     <tr>
         <td class="sidebar">
-            <b>Навигация:</b><br><br>
-            &raquo; Главная <b>&lt;--</b><br>
-            &raquo; Тексты <font color="#a8704a">[скоро]</font><br>
-            &raquo; Образы <font color="#a8704a">[скоро]</font><br>
-            &raquo; <a href="https://hermeticum.ru">Hermeticum.ru</a><br>
-            <br>
-            <hr size="1" color="#c9631a">
-            <br>
-            <b>Статус:</b><br>
-            Сборка разделов.<br>
-            <br>
+            <div class="plashka">
+                <b>Навигация:</b><br><br>
+                &raquo; Главная <b>&lt;--</b><br>
+                &raquo; Тексты <font color="#e6d0a2">[скоро]</font><br>
+                &raquo; Образы <font color="#e6d0a2">[скоро]</font><br>
+                &raquo; <a href="https://hermeticum.ru">Hermeticum.ru</a>
+                <hr size="1" color="#c9631a" style="margin:14px 0;">
+                <b>Статус:</b><br>
+                Сборка разделов.
+            </div>
             <p align="center" style="margin:14px 0 0 0;"><img src="izo1.png" width="150" height="280" alt="" border="0"></p>
         </td>
         <td class="content">
