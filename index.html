@@ -27,7 +27,7 @@ body {
     min-width: 800px;
     height: 116px;
     background-color: #2a1a10;
-    background-image: url("bg2.jpg"); 
+    background-image: url("bg2.jpg"); /* второй мозаичный фон по бокам шапки */
     background-repeat: repeat;
     border-bottom: 3px ridge #c9631a;
     text-align: center;
@@ -47,7 +47,9 @@ table.main {
 }
 td.sidebar {
     width: 190px;
-    background-color: #ffd9a0;
+    background-color: #8c8470;
+    background-image: url("bg3.jpg"); /* мозаика левого блока */
+    background-repeat: repeat;
     border-right: 2px groove #c9631a;
     padding: 14px;
     vertical-align: top;
@@ -56,6 +58,9 @@ td.sidebar {
     color: #5a2e10;
 }
 td.content {
+    background-color: #7a7454;
+    background-image: url("bg4.jpg"); /* мозаика правого блока */
+    background-repeat: repeat;
     padding: 22px 28px;
     vertical-align: top;
     line-height: 1.5;
@@ -125,6 +130,7 @@ a:visited { color: #8a3a14; }
             <b>Статус:</b><br>
             Сборка разделов.<br>
             <br>
+            <p align="center" style="margin:14px 0 0 0;"><img src="izo1.png" width="150" height="280" alt="" border="0"></p>
         </td>
         <td class="content">
             <h2>Приветствую на imaginalis.ru</h2>
