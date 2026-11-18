@@ -2,138 +2,135 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>imaginalis</title>
+<meta name="viewport" content="width=800, initial-scale=1">
+<title>imaginalis.ru - сайт в разработке</title>
 <style type="text/css">
 body {
-    background-color: #1c1917;
-    color: #d8ccb8;
+    background-color: #f0a04f;
+    background-image: url("bg.jpg"); 
+    background-repeat: repeat;
+    color: #3b2410;
     font-family: "Times New Roman", Times, serif;
     font-size: 16px;
-    margin: 30px 0;
+    margin: 0;
+    min-width: 800px;
+    padding: 130px 0 20px 0;
+}
+#shapka {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 800px;
+    height: 116px;
+    background-color: #7a3a0c;
+    border-bottom: 3px ridge #c9631a;
+    text-align: center;
+    z-index: 100;
+}
+#shapka img {
+    border: 0;
+    margin-top: 3px;
+    width: 760px;
+    height: 110px;
 }
 table.main {
     width: 760px;
-    background-color: #2b2622;
-    border: 4px ridge #7a6855;
-}
-td.header {
-    background-color: #161311;
-    border-bottom: 2px groove #7a6855;
-    padding: 15px 20px;
+    table-layout: fixed;
+    background-color: #fff3dc;
+    border: 4px ridge #c9631a;
 }
 td.sidebar {
     width: 190px;
-    background-color: #231f1b;
-    border-right: 2px groove #7a6855;
-    padding: 15px;
+    background-color: #ffd9a0;
+    border-right: 2px groove #c9631a;
+    padding: 14px;
     vertical-align: top;
     font-family: Verdana, Arial, sans-serif;
     font-size: 11px;
+    color: #5a2e10;
 }
 td.content {
-    padding: 25px 30px;
+    padding: 22px 28px;
     vertical-align: top;
     line-height: 1.5;
 }
-td.footer {
-    background-color: #161311;
-    border-top: 2px groove #7a6855;
-    padding: 8px 15px;
-    font-family: Tahoma, Arial, sans-serif;
-    font-size: 11px;
-    color: #8c7d6b;
-}
-h1 {
-    font-size: 24px;
+h2 {
+    font-size: 22px;
     font-weight: normal;
-    color: #e8dcc5;
-    margin: 0 0 5px 0;
-    letter-spacing: 2px;
+    color: #a63f06;
+    margin: 0 0 12px 0;
+    border-bottom: 1px solid #e0a35e;
+    padding-bottom: 4px;
 }
-.latin {
-    font-size: 12px;
-    color: #9e8c76;
-    font-style: italic;
-}
+a { color: #b8470a; text-decoration: underline; }
+a:hover { color: #7a2a00; background-color: #ffd9a0; }
+a:visited { color: #8a3a14; }
+
 .box-inset {
-    background-color: #1f1b18;
-    border: 2px inset #5e5041;
-    padding: 12px 15px;
-    margin: 18px 0;
-}
-a {
-    color: #d4a359;
-    text-decoration: underline;
-}
-a:hover {
-    color: #ffe0a3;
-}
-a:visited {
-    color: #b5853e;
+    background-color: #ffe7bf;
+    border: 2px inset #d9954a;
+    padding: 10px 14px;
+    margin: 16px 0;
 }
 .btn-old {
     display: inline-block;
-    background-color: #3d352e;
-    color: #ede2ce;
-    border: 2px outset #8c7862;
-    padding: 6px 14px;
+    background-color: #f2a354;
+    color: #3b2410;
+    border: 2px outset #ffd9a0;
+    padding: 6px 16px;
     font-family: Tahoma, Arial, sans-serif;
     font-size: 12px;
     text-decoration: none;
 }
-.btn-old:active {
-    border-style: inset;
-}
-.badge-88x31 {
-    width: 88px;
-    height: 31px;
-    border: 1px solid #6e5d4c;
-    background-color: #14110f;
-    color: #c2b097;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 10px;
+.btn-old:visited { color: #3b2410; }
+.btn-old:hover { background-color: #ffb866; color: #3b2410; }
+.btn-old:active { border-style: inset; }
+.podval {
+    width: 760px;
+    padding: 22px 0 30px 0;
     text-align: center;
-    line-height: 14px;
-    margin-top: 10px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #5a2a08;
 }
+.podval a { color: #7a2a00; }
 </style>
 </head>
 <body>
 
+
+<div id="shapka">
+    <a href="index.html"><img src="header.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
+</div>
+
 <center>
 <table class="main" cellpadding="0" cellspacing="0">
     <tr>
-        <td colspan="2" class="header">
-            <h1>IMAGINALIS.RU</h1>
-            <div class="latin">Mundus Imaginalis &mdash; in statu nascendi</div>
-        </td>
-    </tr>
-    <tr>
         <td class="sidebar">
             <b>Навигация:</b><br><br>
-            &raquo; Главная (Вы здесь)<br>
-            &raquo; Тексты <font color="#7a6855">[скоро]</font><br>
-            &raquo; Образы <font color="#7a6855">[скоро]</font><br>
+            &raquo; Главная <b>&lt;--</b><br>
+            &raquo; Тексты <font color="#a8704a">[скоро]</font><br>
+            &raquo; Образы <font color="#a8704a">[скоро]</font><br>
             &raquo; <a href="https://hermeticum.ru">Hermeticum.ru</a><br>
             <br>
-            <hr size="1" color="#4a3f35">
+            <hr size="1" color="#c9631a">
             <br>
             <b>Статус:</b><br>
             Сборка разделов.<br>
             <br>
-            <div class="badge-88x31">
-                <b>IMAGINALIS</b><br>
-                88x31 net
-            </div>
         </td>
         <td class="content">
-            <p><b>Приветствую на imaginalis.ru.</b></p>
+            <h2>Приветствую на imaginalis.ru</h2>
 
-            <p>Сайт сейчас находится в разработке и постепенно наполняется.</p>
+            <p align="center"><b>:: Сайт в разработке ::</b></p>
+
+            <p>Сайт сейчас находится в разработке и постепенно наполняется. Заходите позже.</p>
 
             <div class="box-inset">
                 <b>О сути раздела:</b><br>
-                <b>imaginalis.ru</b> является дочерним сайтом <a href="https://hermeticum.ru">hermeticum.ru</a>, но это отдельное и самостоятельное пространство. Если основной ресурс посвящён герметической традиции в целом, то здесь собирается то, что относится к области <i>mundus imaginalis</i> & (мира анимы мунди) &mdash; миру живого воображения, образов и созерцания.
+                <b>imaginalis.ru</b> является дочерним сайтом <a href="https://hermeticum.ru">hermeticum.ru</a>, но это отдельное и самостоятельное пространство. Если основной ресурс посвящён герметической традиции в целом, то здесь собирается то, что относится к области <i>mundus imaginalis</i> (мира анимы мунди) &mdash; миру живого воображения, образов и созерцания.
             </div>
 
             <p>Пока здесь идут работы, основные материалы доступны на родительском портале:</p>
@@ -143,17 +140,11 @@ a:visited {
             </p>
         </td>
     </tr>
-    <tr>
-        <td colspan="2" class="footer">
-            <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px; color:#8c7d6b;">
-                <tr>
-                    <td>&copy; imaginalis.ru &bull; Дочерний <a href="https://hermeticum.ru">hermeticum.ru</a></td>
-                    <td align="right">Тот, кто идет против дня, не должен бояться ночи</td>
-                </tr>
-            </table>
-        </td>
-    </tr>
 </table>
+<div class="podval">
+    &copy; imaginalis.ru &bull; Дочерний <a href="https://hermeticum.ru">hermeticum.ru</a><br>
+    <i>Тот, кто идет против дня, не должен бояться ночи</i>
+</div>
 </center>
 
 </body>
