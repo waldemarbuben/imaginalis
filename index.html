@@ -86,9 +86,9 @@ a:visited { color: #8a3a14; }
 td.sidebar a, td.content a { color: #ffd47a; }
 td.sidebar a:visited, td.content a:visited { color: #f0b866; }
 td.sidebar a:hover, td.content a:hover { color: #fff6e0; background-color: #6a3a12; }
-td.content .box-inset a { color: #5e1a00; text-shadow: none; }
-td.content .box-inset a:visited { color: #4a1400; }
-td.content .box-inset a:hover { color: #1c1008; background-color: #e8d9a8; }
+td.content .box-inset a { color: #ffd27a; text-shadow: -1px 0 #2b1a08, 1px 0 #2b1a08, 0 -1px #2b1a08, 0 1px #2b1a08, -1px -1px #2b1a08, 1px -1px #2b1a08, -1px 1px #2b1a08, 1px 1px #2b1a08, 1px 2px 3px rgba(0,0,0,0.5); }
+td.content .box-inset a:visited { color: #f0b866; }
+td.content .box-inset a:hover { color: #fff6e0; background-color: transparent; }
 td.content a.btn-old, td.content a.btn-old:visited { color: #3b2410; text-shadow: none; }
 td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 
@@ -99,8 +99,8 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     border: 2px inset #d9954a;
     padding: 10px 14px;
     margin: 16px 0;
-    color: #1c1008;
-    text-shadow: none;
+    color: #fff1d0;
+    text-shadow: -1px 0 #2b1a08, 1px 0 #2b1a08, 0 -1px #2b1a08, 0 1px #2b1a08, -1px -1px #2b1a08, 1px -1px #2b1a08, -1px 1px #2b1a08, 1px 1px #2b1a08, 1px 2px 3px rgba(0,0,0,0.5);
 }
 .btn-old {
     display: inline-block;
@@ -121,7 +121,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     margin-top: auto;
     flex-shrink: 0;
     background-color: #77756e;
-    background-image: url("bg7.jpg"); 
+    background-image: url("bg7.jpg"); /* подложка внизу: мозаика по горизонтали */
     background-repeat: repeat-x;
     background-position: left bottom;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
@@ -141,7 +141,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 .podval a { color: #ffd47a; }
 .plashka {
     background-color: #3a3c40;
-    background-image: linear-gradient(rgba(15,10,5,0.55),rgba(15,10,5,0.55)), url("bg6.jpg"); 
+    background-image: linear-gradient(rgba(15,10,5,0.55),rgba(15,10,5,0.55)), url("bg6.jpg"); /* рельсы: одна картинка, подогнана под размер плашки */
     background-repeat: no-repeat;
     background-size: 100% 100%, cover;
     background-position: 0 0, center;
