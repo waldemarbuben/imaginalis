@@ -87,7 +87,7 @@ a:visited { color: #8a3a14; }
 td.sidebar a, td.content a { color: #ffd47a; }
 td.sidebar a:visited, td.content a:visited { color: #f0b866; }
 td.sidebar a:hover, td.content a:hover { color: #fff6e0; background-color: #6a3a12; }
-td.content .box-inset a { color: #ffd27a; text-shadow: -1px 0 #2b1a08, 1px 0 #2b1a08, 0 -1px #2b1a08, 0 1px #2b1a08, -1px -1px #2b1a08, 1px -1px #2b1a08, -1px 1px #2b1a08, 1px 1px #2b1a08, 1px 2px 3px rgba(0,0,0,0.5); }
+td.content .box-inset a { color: #ffd27a; text-shadow: 1px 1px 2px rgba(18,10,4,0.9), 0 0 6px rgba(18,10,4,0.6); }
 td.content .box-inset a:visited { color: #f0b866; }
 td.content .box-inset a:hover { color: #fff6e0; background-color: transparent; }
 td.content a.btn-old, td.content a.btn-old:visited { color: #3b2410; text-shadow: none; }
@@ -95,14 +95,15 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 
 .box-inset {
     background-color: #d8c89a;
-    background-image: url("bg5.jpg"); 
+    background-image: linear-gradient(rgba(22,14,6,0.5),rgba(22,14,6,0.5)), url("bg5.jpg");
     background-repeat: repeat;
     border: 2px inset #d9954a;
     padding: 10px 14px;
     margin: 16px 0;
     color: #fff1d0;
-    text-shadow: -1px 0 #2b1a08, 1px 0 #2b1a08, 0 -1px #2b1a08, 0 1px #2b1a08, -1px -1px #2b1a08, 1px -1px #2b1a08, -1px 1px #2b1a08, 1px 1px #2b1a08, 1px 2px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(18,10,4,0.9), 0 0 6px rgba(18,10,4,0.6);
 }
+
 .btn-old {
     display: inline-block;
     background-color: #f2a354;
@@ -387,7 +388,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
             <div class="plashka">
                 <b>Навигация:</b><br><br>
                 &raquo; Главная <b>&lt;--</b><br>
-                &raquo; Тексты <font color="#e6d0a2">[скоро]</font><br>
+                &raquo; <a href="texts.html">Тексты</a><br>
                 &raquo; Образы <font color="#e6d0a2">[скоро]</font><br>
                 &raquo; <a href="https://hermeticum.ru">hermeticum.ru</a>
                 <hr size="1" color="#c9631a" style="margin:14px 0;">
