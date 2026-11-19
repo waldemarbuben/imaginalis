@@ -6,7 +6,7 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>potential name — imaginalis.ru</title>
+<title>Название первого текста — imaginalis.ru</title>
 <style type="text/css">
 body {
     background-color: #bdb6a6;
@@ -31,10 +31,12 @@ body {
     width: 100%;
     min-width: 1400px;
     height: 116px;
-    background-color: #8a3a30;
-    background-image: url("bg2_t.jpg"); 
-    background-repeat: repeat;
-    border-bottom: 3px ridge #c9631a;
+    background-color: #cfd0cc;
+    background-image: linear-gradient(rgba(224,150,172,0.20),rgba(224,150,172,0.20)), url("lenta.jpg"), url("bg_lace.jpg");
+    background-repeat: no-repeat, repeat-x, repeat;
+    background-size: 100% 100%, auto 14px, auto;
+    background-position: 0 0, left bottom, 0 0;
+    border-bottom: 3px ridge #cf8a99;
     text-align: center;
     z-index: 100;
 }
@@ -48,14 +50,14 @@ table.main {
     width: 760px;
     table-layout: fixed;
     background-color: #fff3dc;
-    border: 4px ridge #c9631a;
+    border: 4px ridge #cf8a99;
 }
 td.sidebar {
     width: 190px;
     background-color: #8c8470;
     background-image: linear-gradient(rgba(6,12,14,0.30),rgba(6,12,14,0.30)), url("bg3_t.jpg"); 
     background-repeat: repeat;
-    border-right: 2px groove #c9631a;
+    border-right: 2px groove #cf8a99;
     padding: 14px;
     vertical-align: top;
     font-family: Verdana, Arial, sans-serif;
@@ -74,30 +76,31 @@ td.content {
     line-height: 1.5;
 }
 h2 {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: normal;
-    color: #ffc77a;
+    color: #ffd3dd;
+    font-family: "Monotype Corsiva", "Apple Chancery", "Lucida Calligraphy", "URW Chancery L", cursive;
     margin: 0 0 12px 0;
-    border-bottom: 1px solid #d99a52;
+    border-bottom: 1px solid #e0a3b3;
     padding-bottom: 4px;
 }
 a { color: #b8470a; text-decoration: underline; }
 a:hover { color: #7a2a00; background-color: #ffd9a0; }
 a:visited { color: #8a3a14; }
-td.sidebar a, td.content a { color: #ffd47a; }
-td.sidebar a:visited, td.content a:visited { color: #f0b866; }
-td.sidebar a:hover, td.content a:hover { color: #fff6e0; background-color: #6a3a12; }
-td.content .box-inset a { color: #6a2400; text-shadow: 0 0 4px rgba(235,225,205,0.45); }
-td.content .box-inset a:visited { color: #7a3a14; }
+td.sidebar a, td.content a { color: #ffc6d4; }
+td.sidebar a:visited, td.content a:visited { color: #e8b3c4; }
+td.sidebar a:hover, td.content a:hover { color: #fff6f8; background-color: #6a2a3c; }
+td.content .box-inset a { color: #8a2a48; text-shadow: 0 0 4px rgba(235,225,205,0.45); }
+td.content .box-inset a:visited { color: #7a3a50; }
 td.content .box-inset a:hover { color: #fff6e0; background-color: transparent; }
-td.content a.btn-old, td.content a.btn-old:visited { color: #3b2410; text-shadow: none; }
-td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
+td.content a.btn-old, td.content a.btn-old:visited { color: #4a1a2a; text-shadow: none; }
+td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
 
 .box-inset {
     background-color: #a9a597;
     background-image: url("bg5_t.png");
     background-repeat: repeat;
-    border: 2px inset #d9954a;
+    border: 2px inset #e0a3b3;
     padding: 10px 14px;
     margin: 16px 0;
     color: #1d130b;
@@ -108,7 +111,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     margin: 0;
 }
 .statya a { font-size: 18px; }
-.data-st { font-style: italic; color: #ffc77a; font-size: 13px; }
+.data-st { font-style: italic; color: #ffc6d4; font-size: 13px; }
 .anons { margin-top: 4px; }
 .tekst p {
     margin: 0 0 12px 0;
@@ -118,7 +121,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 .citata {
     margin: 4px 0 14px 28px;
     padding-left: 12px;
-    border-left: 2px solid #d99a52;
+    border-left: 2px solid #e0a3b3;
     font-style: italic;
 }
 .lenta {
@@ -131,7 +134,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 }
 .foto {
     margin: 14px 0 0 0;
-    border: 3px ridge #c9631a;
+    border: 3px ridge #cf8a99;
     background-color: #2a1a10;
     padding: 4px;
     box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
@@ -149,16 +152,16 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 }
 .btn-old {
     display: inline-block;
-    background-color: #f2a354;
-    color: #3b2410;
-    border: 2px outset #ffd9a0;
+    background-color: #e9b0bf;
+    color: #4a1a2a;
+    border: 2px outset #ffd9e2;
     padding: 6px 16px;
     font-family: Tahoma, Arial, sans-serif;
     font-size: 12px;
     text-decoration: none;
 }
-.btn-old:visited { color: #3b2410; }
-.btn-old:hover { background-color: #ffb866; color: #3b2410; }
+.btn-old:visited { color: #4a1a2a; }
+.btn-old:hover { background-color: #f4c1ce; color: #4a1a2a; }
 .btn-old:active { border-style: inset; }
 .zemlya {
     position: relative;
@@ -184,7 +187,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     color: #fff3dc;
     text-shadow: 1px 1px 0 #1a1208;
 }
-.podval a { color: #ffd47a; }
+.podval a { color: #ffc6d4; }
 .plashka {
     background-color: #555a5c;
     background-image: linear-gradient(rgba(6,12,14,0.62),rgba(6,12,14,0.62)), url("bg6_t.jpg"); 
@@ -207,16 +210,16 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 }
 ::-webkit-scrollbar-track {
     background-color: #2a1a10;
-    border-left: 1px solid #6a3a12;
+    border-left: 1px solid #6a3a4a;
     box-shadow: inset 2px 0 4px rgba(0,0,0,0.7);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #f2a354;
+    background-color: #e3a1b2;
     border: 1px solid #2a1a10;
-    box-shadow: inset 1px 1px 0 #ffd9a0, inset -1px -1px 0 #a8561a;
+    box-shadow: inset 1px 1px 0 #ffdce5, inset -1px -1px 0 #a85468;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #ffb866;
+    background-color: #f2b8c5;
 }
 ::-webkit-scrollbar-button {
     display: none;
@@ -227,7 +230,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 
 @supports not selector(::-webkit-scrollbar) {
     html, .skroll {
-        scrollbar-color: #f2a354 #2a1a10;
+        scrollbar-color: #e3a1b2 #2a1a10;
     }
 }
 
@@ -240,7 +243,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     z-index: 50;
     display: flex;
     flex-direction: column;
-    border: 4px inset #b8651f;
+    border: 4px inset #b87686;
     background-color: #6f6a52;
     background-repeat: repeat;
     box-shadow: inset 0 0 28px 6px rgba(10,5,0,0.7);
@@ -257,13 +260,13 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("bg9_t.jpg"); 
 }
 .okno h2 {
-    font-size: 18px;
+    font-size: 22px;
     margin: 0;
     padding: 6px 12px 4px 12px;
     background-color: #6c6a68;
     background-image: linear-gradient(rgba(8,12,14,0.55),rgba(8,12,14,0.55)), url("bg_lace.jpg");
     background-repeat: repeat;
-    border-bottom: 2px groove #c9631a;
+    border-bottom: 2px groove #cf8a99;
     text-shadow: 1px 1px 0 #2a2008;
 }
 .skroll {
@@ -284,7 +287,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 .data {
     text-align: right;
     font-style: italic;
-    color: #ffc77a;
+    color: #ffc6d4;
     margin-top: 6px;
 }
 .razdel {
@@ -302,7 +305,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     margin: 0 0 18px 0;
 }
 .ramka {
-    border: 3px ridge #c9631a;
+    border: 3px ridge #cf8a99;
     background-color: #2a1a10;
     padding: 4px;
     box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
@@ -327,7 +330,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 
 
 <div id="shapka">
-    <a href="index.html"><img src="header.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
+    <a href="index.html"><img src="header_f.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
 </div>
 
 
@@ -437,7 +440,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
                 &raquo; <a href="texts.html">Тексты</a> <b>&lt;--</b><br>
                 &raquo; Образы <font color="#e6d0a2">[скоро]</font><br>
                 &raquo; <a href="https://hermeticum.ru">hermeticum.ru</a>
-                <hr size="1" color="#c9631a" style="margin:14px 0;">
+                <hr size="1" color="#cf8a99" style="margin:14px 0;">
                 <b>Статус:</b><br>
                 Сборка разделов.
             </div>
@@ -448,22 +451,22 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
                  1) скопируйте этот файл (например, в text2.html);
                  2) поменяйте <title>, заголовок <h2>, дату и сам текст ниже;
                  3) в texts.html добавьте анонс со ссылкой на новый файл. -->
-            <h2>Первый</h2>
-            <div class="data-st">(00:00)</div>
+            <h2>Название первого текста</h2>
+            <div class="data-st">(дата)</div>
 
             <div class="tekst">
-                <p>абзац.  &lt;p&gt;...&lt;/p&gt;.</p>
+                <p>Первый абзац текста. Каждый абзац оборачивается в &lt;p&gt;...&lt;/p&gt;.</p>
 
-                <p>2 абзац. polniuy</p>
+                <p>Второй абзац. Здесь будет полный текст, сколько бы он ни занимал: страница просто станет длиннее и будет прокручиваться, а боковые окна останутся на месте.</p>
 
-                <p>noz &lt;br&gt;).</p>
+                <p>Для цитаты или стихотворения внутри текста используйте блок ниже (строки разделяются через &lt;br&gt;).</p>
 
                 <div class="citata">
-                    srrk1<br>
-                    strk220.
+                    Первая строка стиха,<br>
+                    вторая строка стиха.
                 </div>
 
-                <p>poslencit</p>
+                <p>Продолжение текста после цитаты.</p>
             </div>
 
             <div class="lenta"></div>
@@ -477,7 +480,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 </center>
 
 <div class="zemlya">
-
+<!-- цветы на дне: позиции задаются через margin-left (от центра страницы) -->
 <img class="cvetok" src="starflower3.png" width="128" height="128" alt="" style="margin-left:-700px;">
 <img class="cvetok" src="starflower4.png" width="128" height="128" alt="" style="margin-left:-585px;">
 <img class="cvetok" src="starflower2.png" width="128" height="128" alt="" style="margin-left:455px;">
