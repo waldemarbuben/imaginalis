@@ -53,7 +53,7 @@ table.main {
 td.sidebar {
     width: 190px;
     background-color: #8c8470;
-    background-image: linear-gradient(rgba(6,12,14,0.30),rgba(6,12,14,0.30)), url("t_bark.png"); 
+    background-image: linear-gradient(rgba(20,0,0,0.35),rgba(20,0,0,0.35)), url("t_sofa.png"); 
     background-repeat: repeat;
     border-right: 2px groove #8a9f55;
     padding: 14px;
@@ -64,8 +64,8 @@ td.sidebar {
     text-shadow: 1px 1px 0 #2a1a08;
 }
 td.content {
-    background-color: #3a4638;
-    background-image: linear-gradient(rgba(10,20,24,0.22),rgba(10,20,24,0.22)), url("t_rock.png"); 
+    background-color: #5a1014;
+    background-image: linear-gradient(rgba(20,0,0,0.50),rgba(20,0,0,0.50)), url("t_boa.png"); 
     background-repeat: repeat;
     padding: 22px 28px;
     color: #fff3dc;
@@ -98,9 +98,8 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
 
 .box-inset {
     background-color: #3a4638;
-    background-image: linear-gradient(rgba(10,18,8,0.55),rgba(10,18,8,0.55)), url("t_wall.png");
-    background-size: 100% 100%, cover;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(20,0,0,0.35),rgba(20,0,0,0.35)), url("t_sofa.png");
+    background-size: auto, auto;
     background-repeat: repeat;
     border: 2px inset #9db36a;
     padding: 10px 14px;
@@ -119,8 +118,9 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
     height: 40px;
     margin: 6px 0 12px 0;
     background-color: #cfcdc4;
-    background-image: linear-gradient(rgba(10,20,24,0.18),rgba(10,20,24,0.18)), url("t_water.png");
+    background-image: url("t_doski.png");
     background-repeat: repeat-x;
+    background-position: 0 0;
     box-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 .foto {
@@ -160,12 +160,11 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
     height: 189px;
     margin-top: auto;
     flex-shrink: 0;
-    background-color: #2f3f2a;
-    background-image: linear-gradient(rgba(6,12,14,0.45),rgba(6,12,14,0.45)), url("t_grass.png"); 
+    background-image: url("t_grass.png"); 
     background-repeat: repeat-x;
     background-position: left bottom;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
-    mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 60px);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 60px);
 }
 .podval {
     width: 760px;
@@ -181,10 +180,10 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
 .podval a { color: #cfe39a; }
 .plashka {
     background-color: #2f3f2a;
-    background-image: linear-gradient(rgba(6,12,14,0.62),rgba(6,12,14,0.62)), url("t_water.png"); 
-    background-repeat: no-repeat;
-    background-size: 100% 100%, cover;
-    background-position: 0 0, center;
+    background-image: linear-gradient(rgba(20,0,0,0.50),rgba(20,0,0,0.50)), url("t_boa.png"); 
+    background-repeat: repeat;
+    background-size: auto, auto;
+    background-position: 0 0, 0 0;
     border: 2px inset #8c8470;
     padding: 9px 11px;
     margin: 0 0 12px 0;
@@ -355,17 +354,12 @@ table.main { position: relative; z-index: 1; }
 }
 #podskazka b { color: #cfe39a; }
 #obrazy { cursor: help; border-bottom: 1px dotted #b9cf85; }
-.liana { position: absolute; top: 112px; border: 0; z-index: 101; pointer-events: none; }
 </style>
 </head>
 <body>
 
 
 <div id="shapka">
-    <img class="liana" src="liana1.png" width="46" height="210" alt="" style="left:50%; margin-left:-436px;">
-    <img class="liana" src="liana3.png" width="50" height="250" alt="" style="left:50%; margin-left:392px;">
-    <img class="liana" src="liana2.png" width="40" height="150" alt="" style="left:50%; margin-left:-500px;">
-    <img class="liana" src="liana2.png" width="40" height="150" alt="" style="left:50%; margin-left:462px; transform:scaleX(-1);">
 
     <a href="index.html"><img src="header_f.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
 </div>

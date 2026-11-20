@@ -324,6 +324,19 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
     color: #fff0d2;
     text-shadow: 1px 1px 0 #2a1a08;
 }
+
+#podskazka {
+    display: none; position: fixed; width: 210px; z-index: 70;
+    background-color: #555a5c;
+    background-image: linear-gradient(rgba(6,12,14,0.62),rgba(6,12,14,0.62)), url("bg6_t.jpg");
+    border: 3px ridge #cf8a99;
+    padding: 9px 11px;
+    font-family: Verdana, Arial, sans-serif; font-size: 11px; line-height: 1.6;
+    color: #fff3dc; text-shadow: 1px 1px 0 #1a1208;
+    pointer-events: none;
+}
+#podskazka b { color: #ffc6d4; }
+#obrazy { cursor: help; border-bottom: 1px dotted #e8b3c4; }
 </style>
 </head>
 <body>
@@ -438,7 +451,7 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
                 <b>Навигация:</b><br><br>
                 &raquo; <a href="index.html">Главная</a><br>
                 &raquo; <a href="texts.html">Тексты</a> <b>&lt;--</b><br>
-                &raquo; Образы <font color="#e6d0a2">[скоро]</font><br>
+                &raquo; <span id="obrazy" onmouseover="pokazPodskazku(event)" onmousemove="dvigPodskazku(event)" onmouseout="skrytPodskazku()">Образы</span><br>
                 &raquo; <a href="https://hermeticum.ru">hermeticum.ru</a>
                 <hr size="1" color="#cf8a99" style="margin:14px 0;">
                 <b>Статус:</b><br>
@@ -488,6 +501,13 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
     <i>Образы составляют само психическое в его имагинативной видимости, то есть самоценны.</i>
 </div>
 </div>
+
+<div id="podskazka"><b>Образы</b><br>Найди дверь внизу страницы.</div>
+<script type="text/javascript">
+function pokazPodskazku(e) { var p = document.getElementById("podskazka"); p.style.display = "block"; dvigPodskazku(e); }
+function dvigPodskazku(e) { var p = document.getElementById("podskazka"); p.style.left = (e.clientX + 16) + "px"; p.style.top = (e.clientY + 16) + "px"; }
+function skrytPodskazku() { document.getElementById("podskazka").style.display = "none"; }
+</script>
 
 </body>
 </html>
