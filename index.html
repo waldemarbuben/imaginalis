@@ -322,11 +322,21 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     position: fixed;
     left: 14px;
     bottom: 0;
-    width: 190px;
-    height: 190px;
+    width: 110px;
+    height: 300px;
     z-index: 40;
     border: 0;
 }
+#drevo {
+    position: fixed;
+    right: 70px;
+    bottom: 70px;
+    width: 170px;
+    height: 190px;
+    z-index: 41;
+    border: 0;
+}
+.fl { position: fixed; bottom: 0; z-index: 42; border: 0; }
 .zemlya { position: relative; }
 .podval { position: relative; z-index: 2; }
 .rast {
@@ -335,6 +345,46 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     z-index: 1;
     border: 0;
 }
+
+/* ===== ДВЕРЬ (вдавлена в песок, поверх закреплена сетка) ===== */
+#dver {
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    bottom: 150px;
+    width: 160px;
+    height: 300px;
+    z-index: 0;
+    display: block;
+}
+#dver .ram {
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    border: 7px ridge #c9631a;
+    background-color: #2a1a10;
+    box-shadow: inset 0 0 16px 5px rgba(0,0,0,0.7), 0 0 0 3px rgba(40,26,12,0.35), 0 0 18px 7px rgba(50,38,20,0.5);
+    overflow: hidden;
+}
+#dver img.polotno { display: block; width: 100%; height: 100%; border: 0; }
+#dver .setka {
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    background-image:
+        repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(25,25,25,0.6) 8px, rgba(25,25,25,0.6) 9.5px),
+        repeating-linear-gradient(-45deg, transparent 0, transparent 8px, rgba(25,25,25,0.6) 8px, rgba(25,25,25,0.6) 9.5px);
+    box-shadow: inset 0 0 0 3px rgba(60,60,60,0.55);
+}
+table.main { position: relative; z-index: 1; }
+#podskazka {
+    display: none; position: fixed; width: 210px; z-index: 70;
+    background-color: #3a3c40;
+    background-image: linear-gradient(rgba(15,10,5,0.55),rgba(15,10,5,0.55)), url("bg6.jpg");
+    border: 3px ridge #c9631a;
+    padding: 9px 11px;
+    font-family: Verdana, Arial, sans-serif; font-size: 11px; line-height: 1.6;
+    color: #fff3dc; text-shadow: 1px 1px 0 #1a1208;
+    pointer-events: none;
+}
+#podskazka b { color: #ffc77a; }
+#obrazy { cursor: help; border-bottom: 1px dotted #e6d0a2; }
 </style>
 </head>
 <body>
@@ -441,7 +491,11 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 </div>
 
 
-<img id="elka" src="elka.png" width="190" height="190" alt="">
+<img id="drevo" src="drevo.png" width="170" height="190" alt="">
+<img id="elka" src="elka.png" width="110" height="300" alt="">
+<img class="fl" src="starflower3.png" width="46" height="46" alt="" style="left:10px;">
+<img class="fl" src="starflower4.png" width="52" height="52" alt="" style="left:48px; bottom:-3px;">
+<img class="fl" src="starflower2.png" width="42" height="42" alt="" style="left:92px;">
 
 <center style="margin-bottom:30px;">
 <table class="main" cellpadding="0" cellspacing="0">
@@ -451,7 +505,7 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
                 <b>Навигация:</b><br><br>
                 &raquo; Главная <b>&lt;--</b><br>
                 &raquo; <a href="texts.html" target="_blank">Тексты</a><br>
-                &raquo; Образы <font color="#e6d0a2">[скоро]</font><br>
+                &raquo; <span id="obrazy" onmouseover="pokazPodskazku(event)" onmousemove="dvigPodskazku(event)" onmouseout="skrytPodskazku()">Образы</span><br>
                 &raquo; <a href="https://hermeticum.ru" target="_blank">hermeticum.ru</a>
                 <hr size="1" color="#c9631a" style="margin:14px 0;">
                 <b>Статус:</b><br>
@@ -482,14 +536,16 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 </table>
 </center>
 
+<a id="dver" href="obraz.html" title="Дверь"><div class="ram"><img class="polotno" src="dver1.jpg" alt="Дверь"><div class="setka"></div></div></a>
+
 <div class="zemlya">
 <!-- растения: left:50% + margin-left = смещение от центра страницы; bottom = высота над низом -->
-<img class="rast" src="trava.png" width="128" height="64" alt="" style="margin-left:-490px; bottom:4px;">
-<img class="rast" src="kust1.png" width="118" height="118" alt="" style="margin-left:-395px; bottom:0;">
-<img class="rast" src="cvetok.png" width="100" height="100" alt="" style="margin-left:-320px; bottom:6px;">
-<img class="rast" src="kust2.png" width="108" height="108" alt="" style="margin-left:255px; bottom:0;">
-<img class="rast" src="trava.png" width="110" height="55" alt="" style="margin-left:345px; bottom:8px;">
-<img class="rast" src="kust3.png" width="100" height="100" alt="" style="margin-left:420px; bottom:2px;">
+<img class="rast" src="trava.png" width="90" height="80" alt="" style="margin-left:-280px; bottom:4px;">
+<img class="rast" src="cvetok.png" width="50" height="115" alt="" style="margin-left:-170px; bottom:6px;">
+<img class="rast" src="kust1.png" width="100" height="150" alt="" style="margin-left:120px; bottom:0;">
+<img class="rast" src="trava.png" width="100" height="72" alt="" style="margin-left:235px; bottom:8px;">
+<img class="rast" src="kust2.png" width="100" height="140" alt="" style="margin-left:350px; bottom:0;">
+<img class="rast" src="kust3.png" width="100" height="112" alt="" style="margin-left:465px; bottom:2px;">
 <div class="podval">
      &copy; Вера Альпийская &bull; <br>
     &copy; imaginalis.ru &bull; Дочерний <a href="https://hermeticum.ru" target="_blank">hermeticum.ru</a><br>
@@ -514,6 +570,14 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     </map>
     <a class="knopka" href="#" onclick="return igraPauza();" title="Играть / пауза"><img id="knopkaImg" src="btn_play.png" width="32" height="32" alt="Играть"></a>
 </div>
+
+
+<div id="podskazka"><b>Образы</b><br>Найди дверь внизу страницы.</div>
+<script type="text/javascript">
+function pokazPodskazku(e) { var p = document.getElementById("podskazka"); p.style.display = "block"; dvigPodskazku(e); }
+function dvigPodskazku(e) { var p = document.getElementById("podskazka"); p.style.left = (e.clientX + 16) + "px"; p.style.top = (e.clientY + 16) + "px"; }
+function skrytPodskazku() { document.getElementById("podskazka").style.display = "none"; }
+</script>
 
 <script type="text/javascript">
 var zvuk = new Audio();

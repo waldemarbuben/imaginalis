@@ -1,0 +1,528 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=1400">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Образы — imaginalis.ru</title>
+<style type="text/css">
+body {
+    background-color: #555a4c;
+    background-image: url("t_rock.png"); 
+    background-repeat: repeat;
+    color: #3b2410;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    font-size: 16px;
+    margin: 0;
+    min-width: 1400px;
+    position: relative;
+    padding: 130px 0 0 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+#shapka {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1400px;
+    height: 116px;
+    background-color: #2c3a30;
+    background-image: linear-gradient(rgba(6,24,26,0.35),rgba(6,24,26,0.35)), url("t_water.png");
+    background-repeat: no-repeat, repeat;
+    border-bottom: 3px ridge #8a9f55;
+    text-align: center;
+    z-index: 100;
+}
+#shapka img {
+    border: 0;
+    margin-top: 3px;
+    width: 760px;
+    height: 110px;
+}
+table.main {
+    width: 760px;
+    table-layout: fixed;
+    background-color: #fff3dc;
+    border: 4px ridge #8a9f55;
+}
+td.sidebar {
+    width: 190px;
+    background-color: #8c8470;
+    background-image: linear-gradient(rgba(6,12,14,0.30),rgba(6,12,14,0.30)), url("t_bark.png"); 
+    background-repeat: repeat;
+    border-right: 2px groove #8a9f55;
+    padding: 14px;
+    vertical-align: top;
+    font-family: "Trebuchet MS", "Gill Sans", Tahoma, sans-serif;
+    font-size: 11px;
+    color: #fff0d2;
+    text-shadow: 1px 1px 0 #2a1a08;
+}
+td.content {
+    background-color: #3a4638;
+    background-image: linear-gradient(rgba(10,20,24,0.22),rgba(10,20,24,0.22)), url("t_rock.png"); 
+    background-repeat: repeat;
+    padding: 22px 28px;
+    color: #fff3dc;
+    text-shadow: -1px 0 #0d1a1e, 1px 0 #0d1a1e, 0 -1px #0d1a1e, 0 1px #0d1a1e, 1px 2px 3px rgba(0,0,0,0.6);
+    vertical-align: top;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 26px;
+    font-weight: normal;
+    color: #d8ecb0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+    border-bottom: 1px solid #9db36a;
+    padding-bottom: 4px;
+}
+a { color: #b8470a; text-decoration: underline; }
+a:hover { color: #7a2a00; background-color: #ffd9a0; }
+a:visited { color: #8a3a14; }
+td.sidebar a, td.content a { color: #cfe39a; }
+td.sidebar a:visited, td.content a:visited { color: #b9cf85; }
+td.sidebar a:hover, td.content a:hover { color: #f6ffe6; background-color: #34481f; }
+td.content .box-inset a { color: #e6f2b8; text-shadow: 0 0 4px rgba(235,225,205,0.45); }
+td.content .box-inset a:visited { color: #cfe39a; }
+td.content .box-inset a:hover { color: #fff6e0; background-color: transparent; }
+td.content a.btn-old, td.content a.btn-old:visited { color: #1d2a10; text-shadow: none; }
+td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
+
+.box-inset {
+    background-color: #3a4638;
+    background-image: linear-gradient(rgba(10,18,8,0.55),rgba(10,18,8,0.55)), url("t_wall.png");
+    background-size: 100% 100%, cover;
+    background-repeat: no-repeat;
+    background-repeat: repeat;
+    border: 2px inset #9db36a;
+    padding: 10px 14px;
+    margin: 16px 0;
+    color: #f1f0d8;
+    text-shadow: 1px 1px 2px rgba(10,16,6,0.9);
+}
+
+.statya {
+    margin: 0;
+}
+.statya a { font-size: 18px; }
+.data-st { font-style: italic; color: #cfe39a; font-size: 13px; }
+.anons { margin-top: 4px; }
+.lenta {
+    height: 40px;
+    margin: 6px 0 12px 0;
+    background-color: #cfcdc4;
+    background-image: linear-gradient(rgba(10,20,24,0.18),rgba(10,20,24,0.18)), url("t_water.png");
+    background-repeat: repeat-x;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.foto {
+    margin: 14px 0 0 0;
+    border: 3px ridge #8a9f55;
+    background-color: #2a1a10;
+    padding: 4px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
+.foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px inset #8c8470;
+}
+.cvetok {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.btn-old {
+    display: inline-block;
+    background-color: #a9c070;
+    color: #1d2a10;
+    border: 2px outset #d9e8b0;
+    padding: 6px 16px;
+    font-family: Georgia, "Palatino Linotype", serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+.btn-old:visited { color: #1d2a10; }
+.btn-old:hover { background-color: #cfe39a; color: #1d2a10; }
+.btn-old:active { border-style: inset; }
+.zemlya {
+    position: relative;
+    min-width: 1400px;
+    height: 189px;
+    margin-top: auto;
+    flex-shrink: 0;
+    background-color: #2f3f2a;
+    background-image: linear-gradient(rgba(6,12,14,0.45),rgba(6,12,14,0.45)), url("t_grass.png"); 
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
+}
+.podval {
+    width: 760px;
+    margin: 0 auto;
+    padding-top: 104px;
+    text-align: center;
+    font-family: Georgia, "Palatino Linotype", serif;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #1a1208;
+}
+.podval a { color: #cfe39a; }
+.plashka {
+    background-color: #2f3f2a;
+    background-image: linear-gradient(rgba(6,12,14,0.62),rgba(6,12,14,0.62)), url("t_water.png"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%, cover;
+    background-position: 0 0, center;
+    border: 2px inset #8c8470;
+    padding: 9px 11px;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #1a1208;
+}
+
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+::-webkit-scrollbar-track {
+    background-color: #2a1a10;
+    border-left: 1px solid #3d5026;
+    box-shadow: inset 2px 0 4px rgba(0,0,0,0.7);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #9db36a;
+    border: 1px solid #2a1a10;
+    box-shadow: inset 1px 1px 0 #d9e8b0, inset -1px -1px 0 #5e7a35;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #bfd486;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: #2a1a10;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    html, .skroll {
+        scrollbar-color: #9db36a #2a1a10;
+    }
+}
+
+
+.okno {
+    position: absolute;
+    top: 150px;
+    height: 520px; 
+    width: 260px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    border: 4px inset #6f8a45;
+    background-color: #6f6a52;
+    background-repeat: repeat;
+    box-shadow: inset 0 0 28px 6px rgba(10,5,0,0.7);
+}
+
+#poeziya {
+    right: 50%;
+    margin-right: 408px;
+    background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("t_bark.png"); 
+}
+#etyudy {
+    left: 50%;
+    margin-left: 408px;
+    background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("t_bark.png"); 
+}
+.okno h2 {
+    font-size: 22px;
+    margin: 0;
+    padding: 6px 12px 4px 12px;
+    background-color: #6c6a68;
+    background-image: linear-gradient(rgba(8,12,14,0.55),rgba(8,12,14,0.55)), url("t_water.png");
+    background-repeat: repeat;
+    border-bottom: 2px groove #8a9f55;
+    text-shadow: 1px 1px 0 #2a2008;
+}
+.skroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 10px 12px 12px;
+}
+
+
+.stih {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #2a2008;
+}
+.data {
+    text-align: right;
+    font-style: italic;
+    color: #cfe39a;
+    margin-top: 6px;
+}
+.razdel {
+    text-align: center;
+    margin: 14px 0;
+}
+.razdel img {
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+
+.etyud {
+    margin: 0 0 18px 0;
+}
+.ramka {
+    border: 3px ridge #8a9f55;
+    background-color: #2a1a10;
+    padding: 4px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
+.ramka img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px inset #8c8470;
+}
+.podpis {
+    margin-top: 6px;
+    text-align: center;
+    font-family: "Trebuchet MS", "Gill Sans", Tahoma, sans-serif;
+    font-size: 11px;
+    color: #fff0d2;
+    text-shadow: 1px 1px 0 #2a1a08;
+}
+
+/* ===== ДВЕРЬ (вдавлена в песок, поверх закреплена сетка) ===== */
+#dver {
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    bottom: 150px;
+    width: 160px;
+    height: 300px;
+    z-index: 0;
+    display: block;
+}
+#dver .ram {
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    border: 7px ridge #8a9f55;
+    background-color: #2a1a10;
+    box-shadow: inset 0 0 16px 5px rgba(0,0,0,0.7), 0 0 0 3px rgba(40,26,12,0.35), 0 0 18px 7px rgba(50,38,20,0.5);
+    overflow: hidden;
+}
+#dver img.polotno { display: block; width: 100%; height: 100%; border: 0; }
+#dver .setka {
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    background-image:
+        repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(25,25,25,0.6) 8px, rgba(25,25,25,0.6) 9.5px),
+        repeating-linear-gradient(-45deg, transparent 0, transparent 8px, rgba(25,25,25,0.6) 8px, rgba(25,25,25,0.6) 9.5px);
+    box-shadow: inset 0 0 0 3px rgba(60,60,60,0.55);
+}
+table.main { position: relative; z-index: 1; }
+#podskazka {
+    display: none; position: fixed; width: 210px; z-index: 70;
+    background-color: #3a3c40;
+    background-image: linear-gradient(rgba(15,10,5,0.55),rgba(15,10,5,0.55)), url("t_water.png");
+    border: 3px ridge #8a9f55;
+    padding: 9px 11px;
+    font-family: "Trebuchet MS", "Gill Sans", Tahoma, sans-serif; font-size: 11px; line-height: 1.6;
+    color: #fff3dc; text-shadow: 1px 1px 0 #1a1208;
+    pointer-events: none;
+}
+#podskazka b { color: #cfe39a; }
+#obrazy { cursor: help; border-bottom: 1px dotted #b9cf85; }
+.liana { position: absolute; top: 112px; border: 0; z-index: 101; pointer-events: none; }
+</style>
+</head>
+<body>
+
+
+<div id="shapka">
+    <img class="liana" src="liana1.png" width="46" height="210" alt="" style="left:50%; margin-left:-436px;">
+    <img class="liana" src="liana3.png" width="50" height="250" alt="" style="left:50%; margin-left:392px;">
+    <img class="liana" src="liana2.png" width="40" height="150" alt="" style="left:50%; margin-left:-500px;">
+    <img class="liana" src="liana2.png" width="40" height="150" alt="" style="left:50%; margin-left:462px; transform:scaleX(-1);">
+
+    <a href="index.html"><img src="header_f.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
+</div>
+
+
+<!-- 
+     заметка для потенция стихотворение, copy -
+    
+     <div class="razdel">...</div> + <div class="stih">...</div>
+     and - перед закрывающим </div></div>). -->
+<div class="okno" id="poeziya">
+    <h2>Поэзия</h2>
+    <div class="skroll">
+
+        <div class="stih">
+            В их волосах - оливковых - разорванные нити,<br>
+            В них пепел прерий, яд и терпкость темной соли.<br>
+            Смуглянками зовут их дети лисьи.<br>
+            Они ведут сквозь анфилады суеверий<br>
+            К триумфу высшей, запредельной боли.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Утопает иссушенный фаллос, путаясь в тине титанических вод, - вместе с ним огрубленный разум мокротой пузырчатой - в кибелический грот.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Сними свои шпильно-красные туфли! Окинь бирюзовым ногтем окружающий мир за класс первый, и когда ты, увидишь гангрену знамен, завопи не стесняясь -<br>
+            «Я ЛЮБЛЮ СОВ, ЖУРАВЛЕЙ И ВОРОН!!!»
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            В ленивой сонливости из обезвоженных кондиционеров плюются каплями голодного пота из резво вращающихся в полуденном салатово-резком зное страдающие вентиля. Они жадненько наползают друг на дружку, ревниво уворачиваясь обступая ветра, грохаются стеклянной дробью на алюминиевые головы карнизов, стремясь со-слоиться. Солнце, неразборчивое в своей щекотке, кажется &lt;…им…&gt; нависшей мельтешащей лампочкой
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Запппылывшие личище, коренасто-упругие щеки, шея, неуклюже взбитое брюхо с маленькой, вздымающейся по сторонам у солнечного сплетения, гинекомастией, что рассасывается довлеющим фоном силуэта щегла, идущего улыбчиво, переминаясь, а в солоноватых руках, сладко запотевших, два многоразовых трехлитровых бидона с молоком, на горлышке которых язвят встречным воздухом коричневые нитки, покусывая грубые костяшки.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Разъедай! Разъедай! - вдохновленное тело.<br>
+            Разъедай до излишков волос,<br>
+            Убегая коснись панцирями бело-саженцев опухающих Роз!<br>
+            На брусчатке мощенной грибами, на пруду - заволоченном рвами<br>
+            Отпускала Цирцея зубо-скаленных Львов!
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Я - валик, я - шпатель, я строительный грунт, я известняк, я глина, я - повивальный пупок!
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            .Вы — фурия. На фоне надуманных вялых попыток, беспомощно-стерильных, обескровленно-пестрых капканов — ваше имя из 8 букв на смуглой латинской коже.
+            <div class="data">(1916)</div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ЭТЮДЫ / ЗАРИСОВКИ / НАБРОСКИ 
+      -->
+<div class="okno" id="etyudy">
+    <h2>Этюды</h2>
+    <div class="skroll">
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud1.jpg" width="440" height="560" alt="Этюд 1"></div>
+            <div class="podpis">Этюд I</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud2.jpg" width="440" height="320" alt="Этюд 2"></div>
+            <div class="podpis">Этюд II</div>
+        </div>
+
+    </div>
+</div>
+
+
+<center style="margin-bottom:30px;">
+<table class="main" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="sidebar">
+            <div class="plashka">
+                <b>Навигация:</b><br><br>
+                &raquo; <a href="index.html">Главная</a><br>
+                &raquo; <a href="texts.html">Тексты</a><br>
+                &raquo; Образы <b>&lt;--</b><br>
+                &raquo; <a href="https://hermeticum.ru">hermeticum.ru</a>
+                <hr size="1" color="#8a9f55" style="margin:14px 0;">
+                <b>Статус:</b><br>
+                Сборка разделов.
+            </div>
+            <div class="foto"><img src="pistol.png" width="146" height="153" alt=""></div>
+        </td>
+        <td class="content">
+            <h2>Образы</h2>
+
+            <p align="center"><b>:: Раздел наполняется ::</b></p>
+
+            <p>Здесь будут собраны образы &mdash; мир живого воображения.</p>
+
+            <div class="lenta"></div>
+
+            <div class="box-inset">
+                <b>О разделе:</b><br>
+                Здесь живут образы <b>imaginalis.ru</b>: то, что относится к области <i>mundus imaginalis</i> &amp; мира anima mundi.
+            </div>
+
+            <p align="center">
+                <a href="index.html" class="btn-old">&larr; На главную</a>
+            </p>
+        </td>
+    </tr>
+</table>
+</center>
+
+<a id="dver" href="index.html" title="Дверь назад"><div class="ram"><img class="polotno" src="dver2.jpg" alt="Дверь назад"><div class="setka"></div></div></a>
+
+<div class="zemlya">
+
+<img class="cvetok" src="starflower3.png" width="84" height="120" alt="" style="margin-left:-660px; ">
+<img class="cvetok" src="starflower4.png" width="64" height="92" alt="" style="margin-left:-555px; ">
+<img class="cvetok" src="starflower2.png" width="100" height="96" alt="" style="margin-left:-465px; ">
+<img class="cvetok" src="starflower4.png" width="56" height="74" alt="" style="margin-left:-350px; transform:scaleX(-1);">
+<img class="cvetok" src="starflower2.png" width="60" height="82" alt="" style="margin-left:330px; transform:scaleX(-1);">
+<img class="cvetok" src="starflower3.png" width="96" height="112" alt="" style="margin-left:410px; ">
+<img class="cvetok" src="starflower4.png" width="64" height="96" alt="" style="margin-left:520px; transform:scaleX(-1);">
+<img class="cvetok" src="starflower2.png" width="76" height="118" alt="" style="margin-left:610px; ">
+<div class="podval">
+     &copy; Вера Альпийская &bull; <br>
+    &copy; imaginalis.ru &bull; Дочерний <a href="https://hermeticum.ru">hermeticum.ru</a><br>
+    <i>Образы составляют само психическое в его имагинативной видимости, то есть самоценны.</i>
+</div>
+</div>
+
+</body>
+</html>
