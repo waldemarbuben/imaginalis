@@ -413,6 +413,48 @@ table.main { position: relative; z-index: 1; }
     text-shadow: 1px 1px 2px #1a1208;
 }
 .zov a { color: #ffd47a; }
+#okno-pt {
+    position: fixed;
+    left: 60px;
+    bottom: 190px;
+    width: 215px;
+    height: 188px;
+    z-index: 39;
+}
+#okno-pt .komnata {
+    position: absolute;
+    left: 34px;
+    top: 26px;
+    width: 141px;
+    height: 140px;
+    overflow: hidden;
+    background-color: #b99d6a;
+    background-image: linear-gradient(160deg, #cdb682 0%, #b3965f 55%, #8f7446 100%);
+}
+#okno-pt .komnata img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+    border: 0;
+}
+#okno-pt .komnata::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    box-shadow: inset 6px 8px 14px 2px rgba(25,12,3,0.7), inset -3px -4px 9px rgba(255,236,190,0.22);
+    pointer-events: none;
+}
+#okno-pt img.stavni {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 215px;
+    height: 188px;
+    border: 0;
+}
 </style>
 </head>
 <body>
@@ -665,57 +707,9 @@ table.main { position: relative; z-index: 1; }
 <img class="fl" src="starflower4.png" width="52" height="52" alt="" style="left:48px; bottom:-3px;">
 <img class="fl" src="starflower2.png" width="42" height="42" alt="" style="left:92px;">
 
-<center style="margin-bottom:30px;">
-<table class="main" cellpadding="0" cellspacing="0">
-    <tr>
-        <td class="sidebar">
-            <div class="plashka">
-                <b>Навигация:</b><br><br>
-                &raquo; Главная <b>&lt;--</b><br>
-                &raquo; <a href="texts.html" target="_blank">Тексты</a><br>
-                &raquo; <span id="obrazy" onmouseover="pokazPodskazku(event)" onmousemove="dvigPodskazku(event)" onmouseout="skrytPodskazku()">Образы</span><br>
-                &raquo; <a href="https://hermeticum.ru" target="_blank">hermeticum.ru</a>
-                <hr size="1" color="#c9631a" style="margin:14px 0;">
-                <b>Статус:</b><br>
-                маргинальный аутсайдер мечтатель
-            </div>
-            <p align="center" style="margin:14px 0 0 0;"><img src="izo1.png" width="150" height="280" alt="" border="0"></p>
-        </td>
-        <td class="content">
-            <h2>Приветствую на imaginalis.ru</h2>
-            <h2>Поцелуй дочь Бабы Яги</h2>
-
-            <div class="box-inset">
-                <b>Об авторе:</b><br>
-                Вера Рудольфовна Альпийская родилась в 1865 году под Вологдой. С детства увлекалась вязанием и вырезанием на проезжих тротуарах белой мастикой своей менструальной эрекции. Во время второго Ахалтекинского похода забралась в башмак белого генерала Михаила Скобелева, имея острые зубы от рождения, развязала ему ботинок, он споткнулся, счесал нос и одержал победу. Вера тогда ушла довольная, ржаной хлеб ей дали да конфет, сам царь угостил карамелью с фруктовой, ягодной, ликерной и ореховой начинкой. Когда Вера поперхнулась конфетами, они застряли в её нёбе, образуя маскулистую мозоль, тогда-то она и научилась ползать по деревьям, помогала мужикам в селе лес валить да и сама, кувыркаясь подобно обручу вертикальному, раскрутилась так от одного дерева в нёбе, что улетела за тридевять земель в тридесятое царство, в тридевятое государство. С тех пор мы только слышим её ветер и покорно внемлем. Я, как краткий биограф «Вальдемар Бубен», моя супруга «Барсик», третья жена, она же сестра кумушка лиса, ну и наш дом, он же тёплое навозное чрево в подмышке потного короля.
-            </div>
-
-            <p align="center">
-                <a href="https://hermeticum.ru" target="_blank" class="btn-old">&larr; Перейти на hermeticum.ru</a>
-            </p>
-        </td>
-    </tr>
-</table>
-</center>
-
-<a id="dver" href="obraz.html" title="Дверь"><div class="ram"><img class="polotno" src="dver1.jpg" alt="Дверь"><div class="setka"></div></div></a>
-
-<div class="zemlya">
-
-<img class="rast" src="trava.png" width="90" height="80" alt="" style="margin-left:-280px; bottom:4px;">
-<img class="rast" src="cvetok.png" width="50" height="115" alt="" style="margin-left:-170px; bottom:6px;">
-<img class="rast" src="kust1.png" width="100" height="150" alt="" style="margin-left:120px; bottom:0;">
-<img class="rast" src="trava.png" width="100" height="72" alt="" style="margin-left:235px; bottom:8px;">
-<img class="rast" src="kust2.png" width="100" height="140" alt="" style="margin-left:350px; bottom:0;">
-<img class="rast" src="kust3.png" width="100" height="112" alt="" style="margin-left:465px; bottom:2px;">
-<div class="podval">
-     &copy; Вера Альпийская &bull; <br>
-    &copy; imaginalis.ru &bull; Дочерний <a href="https://hermeticum.ru" target="_blank">hermeticum.ru</a><br>
-    <i>Образы составляют само психическое в его имагинативной видимости, то есть самоценны.</i>
-    <div class="zov">
-        Буду рад живым, тонко чувствующим людям, прекрасным дамам и всем, кому близок этот мир. Если мои тексты, картины, стихи или образы отозвались - пишите смело. Остальных прошу не беспокоить....<br>
-        <a href="mailto:patron@hermeticum.ru">patron@hermeticum.ru</a>
-    </div>
+<div id="okno-pt">
+    <div class="komnata"><img src="portret.png" alt=""></div>
+    <img class="stavni" src="okno.gif" alt="">
 </div>
 </div>
 
