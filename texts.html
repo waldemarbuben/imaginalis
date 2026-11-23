@@ -158,6 +158,12 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
     height: 285px;
     margin-top: auto;
     flex-shrink: 0;
+}
+.zemlya::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 189px;
     background-color: #555a5c;
     background-image: linear-gradient(rgba(6,12,14,0.45),rgba(6,12,14,0.45)), url("bg7_t.jpg"); 
     background-repeat: repeat-x;
@@ -176,6 +182,7 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
     color: #fff3dc;
     text-shadow: 1px 1px 0 #1a1208;
 }
+.podval { position: relative; z-index: 2; }
 .podval a { color: #ffc6d4; }
 .plashka {
     background-color: #555a5c;
@@ -319,7 +326,7 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
     position: absolute;
     left: 50%;
     margin-left: -80px;
-    bottom: 246px;
+    bottom: 150px;
     width: 160px;
     height: 300px;
     z-index: 0;
@@ -355,7 +362,8 @@ table.main { position: relative; z-index: 1; }
 #obrazy { cursor: help; border-bottom: 1px dotted #e8b3c4; }
 .zov {
     margin: 12px auto 0 auto;
-    padding-top: 8px;
+    padding: 8px 10px 6px 10px;
+    background-color: rgba(10,6,2,0.28);
     width: 640px;
     border-top: 1px solid rgba(255,198,212,0.35);
     font-family: Georgia, "Palatino Linotype", serif;
