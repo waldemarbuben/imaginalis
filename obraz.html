@@ -157,7 +157,7 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
 .zemlya {
     position: relative;
     min-width: 1400px;
-    height: 285px;
+    height: 215px;
     margin-top: auto;
     flex-shrink: 0;
 }
@@ -175,7 +175,7 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
 .podval {
     width: 760px;
     margin: 0 auto;
-    padding-top: 104px;
+    padding-top: 88px;
     text-align: center;
     font-family: Georgia, "Palatino Linotype", serif;
     font-size: 11px;
@@ -252,6 +252,8 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
     background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("t_bark.png"); 
 }
 #etyudy {
+    width: 284px;
+    height: 640px;
     left: 50%;
     margin-left: 408px;
     background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("t_bark.png"); 
@@ -271,7 +273,7 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
     min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 12px 10px 12px 12px;
+    padding: 12px 8px 12px 10px;
 }
 
 
@@ -302,6 +304,11 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
     margin: 0 0 18px 0;
 }
 .ramka {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
     border: 3px ridge #8a9f55;
     background-color: #2a1a10;
     padding: 4px;
@@ -309,7 +316,8 @@ td.content a.btn-old:hover { color: #1d2a10; background-color: #cfe39a; }
 }
 .ramka img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     border: 2px inset #8c8470;
 }
@@ -362,18 +370,58 @@ table.main { position: relative; z-index: 1; }
 #podskazka b { color: #cfe39a; }
 #obrazy { cursor: help; border-bottom: 1px dotted #b9cf85; }
 .zov {
-    margin: 12px auto 0 auto;
-    padding: 8px 10px 6px 10px;
+    margin: 6px auto 0 auto;
+    padding: 4px 10px 4px 10px;
     background-color: rgba(10,6,2,0.28);
-    width: 640px;
+    width: 700px;
     border-top: 1px solid rgba(207,227,154,0.35);
     font-family: Georgia, "Palatino Linotype", serif;
-    font-size: 13px;
-    line-height: 1.55;
+    font-size: 12px;
+    line-height: 1.4;
     color: #e6f2c4;
     text-shadow: 1px 1px 2px #1a1208;
 }
 .zov a { color: #cfe39a; }
+
+.obrazy {
+    margin: 18px 0 8px 0;
+}
+.obraz {
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+.obraz-ramka {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 6px ridge #b49ad6;
+    background-color: #1c1226;
+    padding: 6px;
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.7);
+}
+.obraz-ramka img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border: 2px inset #7a6498;
+}
+.obraz-nazv {
+    margin-top: 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #e2d4f4;
+}
+.obraz-opis {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #f1f0d8;
+}
 </style>
 </head>
 <body>
@@ -468,13 +516,153 @@ table.main { position: relative; z-index: 1; }
     <div class="skroll">
 
         <div class="etyud">
-            <div class="ramka"><img src="etyud1.jpg" width="440" height="560" alt="Этюд 1"></div>
+            <div class="ramka"><img src="etyud1.jpg" alt="Этюд 1" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд I</div>
         </div>
 
         <div class="etyud">
-            <div class="ramka"><img src="etyud2.jpg" width="440" height="320" alt="Этюд 2"></div>
+            <div class="ramka"><img src="etyud2.jpg" alt="Этюд 2" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд II</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud3.jpg" alt="Этюд 3" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд III</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud4.jpg" alt="Этюд 4" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд IV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud5.jpg" alt="Этюд 5" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд V</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud6.jpg" alt="Этюд 6" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд VI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud7.jpg" alt="Этюд 7" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд VII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud8.jpg" alt="Этюд 8" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд VIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud9.jpg" alt="Этюд 9" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд IX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud10.jpg" alt="Этюд 10" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд X</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud11.jpg" alt="Этюд 11" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud12.jpg" alt="Этюд 12" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud13.jpg" alt="Этюд 13" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud14.jpg" alt="Этюд 14" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XIV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud15.jpg" alt="Этюд 15" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud16.jpg" alt="Этюд 16" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XVI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud17.jpg" alt="Этюд 17" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XVII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud18.jpg" alt="Этюд 18" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XVIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud19.jpg" alt="Этюд 19" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XIX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud20.jpg" alt="Этюд 20" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud21.jpg" alt="Этюд 21" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud22.jpg" alt="Этюд 22" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud23.jpg" alt="Этюд 23" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud24.jpg" alt="Этюд 24" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXIV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud25.jpg" alt="Этюд 25" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud26.jpg" alt="Этюд 26" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXVI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud27.jpg" alt="Этюд 27" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXVII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud28.jpg" alt="Этюд 28" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXVIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud29.jpg" alt="Этюд 29" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXIX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud30.jpg" alt="Этюд 30" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXX</div>
         </div>
 
     </div>
@@ -503,6 +691,189 @@ table.main { position: relative; z-index: 1; }
             <p align="center"><b>:: Раздел наполняется ::</b></p>
 
             <p>Здесь будут собраны образы &mdash; мир живого воображения.</p>
+
+            <div class="obrazy">
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz1.jpg" alt="Снеговик" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">Снеговик</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz2.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz3.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz4.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz5.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz6.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz7.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz8.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz9.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz10.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz11.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz12.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz13.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz14.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz15.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz16.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz17.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz18.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz19.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz20.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz21.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz22.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz23.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz24.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz25.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz26.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz27.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz28.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz29.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+
+                <div class="obraz">
+                    <div class="obraz-ramka"><img src="obraz30.jpg" alt="—" onerror="this.parentNode.parentNode.style.display='none'"></div>
+                    <div class="obraz-nazv">—</div>
+                    <div class="obraz-opis">—</div>
+                </div>
+            </div>
 
             <div class="lenta"></div>
 
