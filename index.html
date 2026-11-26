@@ -338,8 +338,8 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     position: fixed;
     right: 24px;
     bottom: 120px;
-    width: 250px;
-    z-index: 61;
+    width: 278px;
+    z-index: 200;
     background-color: #3a3c40;
     background-image: linear-gradient(rgba(15,10,5,0.55),rgba(15,10,5,0.55)), url("bg6.jpg");
     border: 3px ridge #c9631a;
@@ -349,7 +349,9 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
     line-height: 1.6;
     color: #fff3dc;
     text-shadow: 1px 1px 0 #1a1208;
-    max-height: calc(100vh - 150px);
+    box-sizing: border-box;
+    max-height: calc(100vh - 128px);
+    overscroll-behavior: contain;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #c9631a #2a1a08;
@@ -933,12 +935,12 @@ function skrytPodskazku() { document.getElementById("podskazka").style.display =
 
 <script type="text/javascript">
 var zvuk = new Audio();
-var pesni = [];      /* только плейлист */
-var stancii = [];    /* только Трещалка */
-var vybrano = null;  /* выбранная песня или станция */
-var oshibki = 0;     /* сколько песен подряд не открылось */
+var pesni = [];      /* песни */
+var stancii = [];    /* станции */
+var vybrano = null;  /* что выбрано */
+var oshibki = 0;     /* ошибки подряд */
 
-/* крутящиеся диски вперемешку: у каждого номера трека всегда свой диск */
+/* диски вперемешку */
 function dobavitDisk(a) {
     var n = parseInt(a.getAttribute("href").replace(/\D/g, ""), 10) || 0;
     var disk = document.createElement("img");
@@ -953,7 +955,6 @@ function dobavitDisk(a) {
     for (var i = 0; i < links.length; i++) {
         var a = links[i];
         if (a.getAttribute("data-vne")) {
-            /* отдельное окно: глушим плеер, чтобы не звучало в два голоса */
             a.onclick = function () { stop(); soobshchit(""); return true; };
             continue;
         }
@@ -985,7 +986,7 @@ function obnovit() {
     var vse = stancii.concat(pesni);
     for (var i = 0; i < vse.length; i++) {
         var klass = eto_radio(vse[i]) ? "stanciya" : "";
-        if (vse[i] == vybrano) { klass += " tek"; if (zvuchit) { klass += " igraet"; } }
+        if (vse[i] == vybrano) { klass += " tek"; }
         vse[i].className = klass;
     }
 }
@@ -993,7 +994,7 @@ function obnovit() {
 function stop() {
     zvuk.pause();
     if (eto_radio(vybrano)) {
-        /* прямой эфир отключаем совсем, чтобы потом не играл старый кусок */
+        /* отключаем эфир совсем */
         zvuk.removeAttribute("src");
         zvuk.load();
     }
@@ -1025,7 +1026,7 @@ function nazhali(el) {
     vklyuchit(el);
 }
 
-/* следующая песня: только внутри плейлиста, на Трещалку не перескакивает */
+/* только по песням */
 function sleduyushchaya() {
     if (!pesni.length) { return; }
     var n = 0;
