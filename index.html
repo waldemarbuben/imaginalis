@@ -359,6 +359,16 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 #spisok a:visited { color: #ffd47a; }
 #spisok a:hover { color: #fff6e0; background-color: #6a3a12; }
 #spisok a.tek { color: #fff6e0; background-color: #8a4a14; }
+#spisok .blok { border: 2px groove #c9631a; padding: 6px 7px 8px 7px; margin-top: 10px; }
+#spisok .blok b { display: block; font-size: 13px; text-align: center; border-bottom: 1px solid #c9631a; padding-bottom: 3px; margin-bottom: 5px; }
+#spisok #treshchalka { background-color: rgba(122,58,10,0.55); border-style: ridge; }
+#spisok #treshchalka a.stanciya { border: 2px outset #d9954a; background-color: #4a2a10; padding: 6px; margin-top: 7px; }
+#spisok #treshchalka a.stanciya:before { content: "\25BA\FE0E  "; }
+#spisok #treshchalka a.stanciya.tek { border-style: inset; background-color: #8a4a14; }
+#spisok #treshchalka a.stanciya.igraet:before { content: "\25A0\FE0E  "; }
+#spisok #treshchalka a.vne { font-size: 10px; text-align: right; text-decoration: underline; }
+#spisok .poyasnenie { display: block; font-size: 10px; text-align: center; font-style: italic; }
+#spisok #sostoyanie { margin-top: 8px; text-align: center; color: #ffe2b0; }
 
 /* ===== РАСТЕНИЯ ===== */
 #elka {
@@ -779,17 +789,22 @@ table.main { position: relative; z-index: 1; }
 <!-- плеер
       ===== -->
 <div id="spisok">
-    <b>Плейлист</b> (нажмите на каблук, чтобы закрыть)<br>
-    <br>
-    <b>Беспроволочное</b><br>
-    Две самостоятельные волны. Включайте одну станцию, другая при этом остановится.<br>
-    <i>Если не заиграло — выключите VPN и/или включите станцию в отдельном окне:</i>
-    <a href="http://195.91.237.50:8000/ices128" target="_blank" data-vne="1">&#8599; Литература по беспроволочному</a>
-    <a href="http://195.91.237.50:8000/music128" target="_blank" data-vne="1">&#8599; Мелодии по беспроволочному</a>
-    <br>
-    <a href="http://195.91.237.50:8000/ices128" data-radio="1"><img src="radio.png" width="32" height="32" align="absmiddle" hspace="4" border="0" alt="">Литература по беспроволочному</a>
-    <a href="http://195.91.237.50:8000/music128" data-radio="1"><img src="radio.png" width="32" height="32" align="absmiddle" hspace="4" border="0" alt="">Мелодии по беспроволочному</a>
-    <br>
+    (нажмите на каблук, чтобы закрыть)
+    <div id="sostoyanie"></div>
+
+    <div class="blok" id="treshchalka">
+        <b>Трещалка</b>
+        <span class="poyasnenie">Прямой эфир. Нажали: трещит. Нажали ещё раз: молчит.</span>
+        <span class="poyasnenie">Если не заиграло, выключите VPN. Ещё может заработать по прямой ссылке: нажмите «открыть в отдельном окне» под станцией.</span>
+        <a class="stanciya" href="http://195.91.237.50:8000/ices128" data-radio="1">Литература</a>
+        <a class="vne" href="http://195.91.237.50:8000/ices128" target="_blank" data-vne="1">открыть в отдельном окне &#8599;&#xFE0E;</a>
+        <a class="stanciya" href="http://195.91.237.50:8000/music128" data-radio="1">Мелодии</a>
+        <a class="vne" href="http://195.91.237.50:8000/music128" target="_blank" data-vne="1">открыть в отдельном окне &#8599;&#xFE0E;</a>
+    </div>
+
+    <div class="blok" id="pesni">
+        <b>Плейлист</b>
+        <span class="poyasnenie">Песни играют по порядку.</span>
     <a href="track1.mp3">Juice Newton — Queen of Hearts.</a>
     <a href="track2.mp3">I Corvi - Sospesa a Un Filo.</a>
     <a href="track3.mp3">На Бродвее Шумном...</a>
@@ -890,6 +905,7 @@ table.main { position: relative; z-index: 1; }
     <a href="track98.mp3">---</a>
     <a href="track99.mp3">---</a>
     <a href="track100.mp3">---</a>
+    </div>
 </div>
 
 <div id="noga">
@@ -911,85 +927,99 @@ function skrytPodskazku() { document.getElementById("podskazka").style.display =
 
 <script type="text/javascript">
 var zvuk = new Audio();
-var tracks = [];
-var nomer = 0;
-var oshibki = 0;
-var igraet = false;
+var pesni = [];      /* только плейлист */
+var stancii = [];    /* только Трещалка */
+var vybrano = null;  /* выбранная песня или станция */
+var oshibki = 0;     /* сколько песен подряд не открылось */
 
 (function () {
     var links = document.getElementById("spisok").getElementsByTagName("a");
-    var pervyy = -1;
-    var k = 0;
     for (var i = 0; i < links.length; i++) {
-        if (links[i].getAttribute("data-vne")) { continue; }
-        tracks[k] = links[i];
-        if (/^[\s\-\u2013\u2014]*$/.test(links[i].innerHTML.replace(/&nbsp;/g, " "))) {
-            links[i].style.display = "none";
-        } else if (pervyy < 0 && !links[i].getAttribute("data-radio")) {
-            pervyy = k;
+        var a = links[i];
+        if (a.getAttribute("data-vne")) {
+            /* отдельное окно: глушим плеер, чтобы не звучало в два голоса */
+            a.onclick = function () { stop(); soobshchit(""); return true; };
+            continue;
         }
-        links[i].onclick = (function (n) {
-            return function () { vybratTrack(n); return false; };
-        })(k);
-        k++;
+        if (a.getAttribute("data-radio")) {
+            stancii.push(a);
+        } else if (/^(\s|&nbsp;|-|–|—)*$/.test(a.innerHTML)) {
+            a.style.display = "none";
+            continue;
+        } else {
+            pesni.push(a);
+        }
+        a.onclick = (function (el) {
+            return function () { nazhali(el); return false; };
+        })(a);
     }
-    if (pervyy >= 0) { nomer = pervyy; }
+    vybrano = pesni[0] || null;
 })();
 
-function kolVidimyh() {
-    var k = 0;
-    for (var i = 0; i < tracks.length; i++) {
-        if (tracks[i].style.display != "none") { k++; }
-    }
-    return k;
-}
+function eto_radio(el) { return !!(el && el.getAttribute("data-radio")); }
+
+function soobshchit(tekst) { document.getElementById("sostoyanie").innerHTML = tekst; }
 
 function obnovit() {
-    document.getElementById("knopkaImg").src = igraet ? "btn_pause.png" : "btn_play.png";
-    document.getElementById("knopkaImg").alt = igraet ? "Пауза" : "Играть";
-    for (var i = 0; i < tracks.length; i++) {
-        tracks[i].className = (i == nomer) ? "tek" : "";
+    var zvuchit = !zvuk.paused;
+    var img = document.getElementById("knopkaImg");
+    img.src = zvuchit ? "btn_pause.png" : "btn_play.png";
+    img.alt = zvuchit ? "Пауза" : "Играть";
+    var vse = stancii.concat(pesni);
+    for (var i = 0; i < vse.length; i++) {
+        var klass = eto_radio(vse[i]) ? "stanciya" : "";
+        if (vse[i] == vybrano) { klass += " tek"; if (zvuchit) { klass += " igraet"; } }
+        vse[i].className = klass;
     }
 }
 
-function zagruzit(n) {
-    nomer = n;
-    zvuk.src = tracks[n].getAttribute("href");
+function stop() {
+    zvuk.pause();
+    if (eto_radio(vybrano)) {
+        /* прямой эфир отключаем совсем, чтобы потом не играл старый кусок */
+        zvuk.removeAttribute("src");
+        zvuk.load();
+    }
+    obnovit();
 }
 
-function vybratTrack(n) {
+function pusk() {
+    var obeshchanie = zvuk.play();
+    if (obeshchanie && obeshchanie["catch"]) {
+        obeshchanie["catch"](function (e) {
+            if (e && e.name == "NotAllowedError") { soobshchit("Нажмите на кнопку ещё раз."); }
+            obnovit();
+        });
+    }
+    obnovit();
+}
+
+function vklyuchit(el) {
+    vybrano = el;
+    soobshchit(eto_radio(el) ? "Трещалка настраивается..." : "");
+    zvuk.src = el.getAttribute("href");
+    pusk();
+}
+
+function nazhali(el) {
     oshibki = 0;
-    zagruzit(n);
-    zvuk.play();
-    igraet = true;
-    obnovit();
+    if (el == vybrano && !zvuk.paused) { stop(); soobshchit(""); return; }
+    if (el == vybrano && !eto_radio(el) && zvuk.getAttribute("src") && !zvuk.error) { pusk(); return; }
+    vklyuchit(el);
 }
 
-function sleduyushchiy() {
-    var n = nomer;
-    var nashli = false;
-    for (var k = 0; k < tracks.length; k++) {
-        n = (n + 1) % tracks.length;
-        if (tracks[n].style.display != "none") { nashli = true; break; }
+/* следующая песня: только внутри плейлиста, на Трещалку не перескакивает */
+function sleduyushchaya() {
+    if (!pesni.length) { return; }
+    var n = 0;
+    for (var i = 0; i < pesni.length; i++) {
+        if (pesni[i] == vybrano) { n = (i + 1) % pesni.length; }
     }
-    if (!nashli) { igraet = false; obnovit(); return; }
-    zagruzit(n);
-    zvuk.play();
-    igraet = true;
-    obnovit();
+    vklyuchit(pesni[n]);
 }
 
 function igraPauza() {
-    if (!kolVidimyh()) { return false; }
-    if (!zvuk.src) { zagruzit(nomer); }
-    if (igraet) {
-        zvuk.pause();
-        igraet = false;
-    } else {
-        zvuk.play();
-        igraet = true;
-    }
-    obnovit();
+    if (vybrano) { nazhali(vybrano); }
     return false;
 }
 
@@ -999,12 +1029,24 @@ function pokazatSpisok() {
     return false;
 }
 
-zvuk.onended = function () { oshibki = 0; sleduyushchiy(); };
+function radioNeIgraet() {
+    stop();
+    soobshchit("Трещалка не заиграла. Нажмите под станцией «открыть в отдельном окне» или выключите VPN.");
+}
+
+zvuk.onplay = obnovit;
+zvuk.onpause = obnovit;
+zvuk.onplaying = function () { oshibki = 0; soobshchit(""); obnovit(); };
+zvuk.onended = function () {
+    if (eto_radio(vybrano)) { radioNeIgraet(); return; }
+    sleduyushchaya();
+};
 zvuk.onerror = function () {
-    if (tracks[nomer] && tracks[nomer].getAttribute("data-radio")) { igraet = false; obnovit(); return; }
+    if (!zvuk.getAttribute("src")) { return; }
+    if (eto_radio(vybrano)) { radioNeIgraet(); return; }
     oshibki++;
-    if (oshibki < kolVidimyh()) { sleduyushchiy(); }
-    else { igraet = false; obnovit(); }
+    if (oshibki < pesni.length) { sleduyushchaya(); }
+    else { zvuk.pause(); obnovit(); soobshchit("Песни не открываются."); }
 };
 obnovit();
 </script>
