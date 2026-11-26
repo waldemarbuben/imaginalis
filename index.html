@@ -363,10 +363,14 @@ td.content a.btn-old:hover { color: #3b2410; background-color: #ffb866; }
 #spisok .blok b { display: block; font-size: 13px; text-align: center; border-bottom: 1px solid #c9631a; padding-bottom: 3px; margin-bottom: 5px; }
 #spisok #treshchalka { background-color: rgba(122,58,10,0.55); border-style: ridge; }
 #spisok #treshchalka a.stanciya { border: 2px outset #d9954a; background-color: #4a2a10; padding: 6px; margin-top: 7px; }
-#spisok #treshchalka a.stanciya:before { content: "\25BA\FE0E  "; }
+#spisok #treshchalka a.stanciya:before { content: url("playradio.gif"); display: inline-block; vertical-align: middle; margin-right: 8px; }
 #spisok #treshchalka a.stanciya.tek { border-style: inset; background-color: #8a4a14; }
-#spisok #treshchalka a.stanciya.igraet:before { content: "\25A0\FE0E  "; }
 #spisok #treshchalka a.vne { font-size: 10px; text-align: right; text-decoration: underline; }
+#spisok #treshchalka img.priemnik { display: block; margin: 2px auto 4px auto; }
+#spisok a.vne img { vertical-align: middle; margin-left: 4px; border: 0; }
+#spisok #pesni b img { display: block; margin: 0 auto; }
+#spisok #pesni a img.disk { width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; border: 0; }
+#spisok #treshchalka img.glaza { display: block; max-width: 100%; height: auto; margin: 0 auto 6px auto; }
 #spisok .poyasnenie { display: block; font-size: 10px; text-align: center; font-style: italic; }
 #spisok #sostoyanie { margin-top: 8px; text-align: center; color: #ffe2b0; }
 
@@ -793,17 +797,19 @@ table.main { position: relative; z-index: 1; }
     <div id="sostoyanie"></div>
 
     <div class="blok" id="treshchalka">
+        <img class="glaza" src="eyey.gif" alt="">
         <b>Трещалка</b>
-        <span class="poyasnenie">Прямой эфир. Нажали: трещит. Нажали ещё раз: молчит.</span>
+        <img class="priemnik" src="radioic.gif" width="65" height="75" alt="">
+        <span class="poyasnenie">Прямой эфир.</span>
         <span class="poyasnenie">Если не заиграло, выключите VPN. Ещё может заработать по прямой ссылке: нажмите «открыть в отдельном окне» под станцией.</span>
         <a class="stanciya" href="http://195.91.237.50:8000/ices128" data-radio="1">Литература</a>
-        <a class="vne" href="http://195.91.237.50:8000/ices128" target="_blank" data-vne="1">открыть в отдельном окне &#8599;&#xFE0E;</a>
+        <a class="vne" href="http://195.91.237.50:8000/ices128" target="_blank" data-vne="1">открыть в отдельном окне<img src="linkedradio.gif" width="16" height="16" alt=""></a>
         <a class="stanciya" href="http://195.91.237.50:8000/music128" data-radio="1">Мелодии</a>
-        <a class="vne" href="http://195.91.237.50:8000/music128" target="_blank" data-vne="1">открыть в отдельном окне &#8599;&#xFE0E;</a>
+        <a class="vne" href="http://195.91.237.50:8000/music128" target="_blank" data-vne="1">открыть в отдельном окне<img src="linkedradio.gif" width="16" height="16" alt=""></a>
     </div>
 
     <div class="blok" id="pesni">
-        <b>Плейлист</b>
+        <b><img src="playlis.gif" width="147" height="40" alt="Плейлист"></b>
         <span class="poyasnenie">Песни играют по порядку.</span>
     <a href="track1.mp3">Juice Newton — Queen of Hearts.</a>
     <a href="track2.mp3">I Corvi - Sospesa a Un Filo.</a>
@@ -932,6 +938,16 @@ var stancii = [];    /* только Трещалка */
 var vybrano = null;  /* выбранная песня или станция */
 var oshibki = 0;     /* сколько песен подряд не открылось */
 
+/* крутящиеся диски вперемешку: у каждого номера трека всегда свой диск */
+function dobavitDisk(a) {
+    var n = parseInt(a.getAttribute("href").replace(/\D/g, ""), 10) || 0;
+    var disk = document.createElement("img");
+    disk.src = ((n * 37) % 101) % 2 ? "cdrom1.GIF" : "cdrom2.GIF";
+    disk.className = "disk";
+    disk.alt = "";
+    a.insertBefore(disk, a.firstChild);
+}
+
 (function () {
     var links = document.getElementById("spisok").getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
@@ -948,6 +964,7 @@ var oshibki = 0;     /* сколько песен подряд не открыл
             continue;
         } else {
             pesni.push(a);
+            dobavitDisk(a);
         }
         a.onclick = (function (el) {
             return function () { nazhali(el); return false; };
