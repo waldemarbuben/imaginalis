@@ -780,6 +780,16 @@ table.main { position: relative; z-index: 1; }
       ===== -->
 <div id="spisok">
     <b>Плейлист</b> (нажмите на каблук, чтобы закрыть)<br>
+    <br>
+    <b>Беспроволочное</b><br>
+    Две самостоятельные волны. Включайте одну станцию, другая при этом остановится.<br>
+    <i>Если не заиграло — выключите VPN и/или включите станцию в отдельном окне:</i>
+    <a href="http://195.91.237.50:8000/ices128" target="_blank" data-vne="1">&#8599; Литература по беспроволочному</a>
+    <a href="http://195.91.237.50:8000/music128" target="_blank" data-vne="1">&#8599; Мелодии по беспроволочному</a>
+    <br>
+    <a href="http://195.91.237.50:8000/ices128" data-radio="1"><img src="radio.png" width="32" height="32" align="absmiddle" hspace="4" border="0" alt="">Литература по беспроволочному</a>
+    <a href="http://195.91.237.50:8000/music128" data-radio="1"><img src="radio.png" width="32" height="32" align="absmiddle" hspace="4" border="0" alt="">Мелодии по беспроволочному</a>
+    <br>
     <a href="track1.mp3">Juice Newton — Queen of Hearts.</a>
     <a href="track2.mp3">I Corvi - Sospesa a Un Filo.</a>
     <a href="track3.mp3">На Бродвее Шумном...</a>
@@ -909,16 +919,19 @@ var igraet = false;
 (function () {
     var links = document.getElementById("spisok").getElementsByTagName("a");
     var pervyy = -1;
+    var k = 0;
     for (var i = 0; i < links.length; i++) {
-        tracks[i] = links[i];
+        if (links[i].getAttribute("data-vne")) { continue; }
+        tracks[k] = links[i];
         if (/^[\s\-\u2013\u2014]*$/.test(links[i].innerHTML.replace(/&nbsp;/g, " "))) {
             links[i].style.display = "none";
-        } else if (pervyy < 0) {
-            pervyy = i;
+        } else if (pervyy < 0 && !links[i].getAttribute("data-radio")) {
+            pervyy = k;
         }
         links[i].onclick = (function (n) {
             return function () { vybratTrack(n); return false; };
-        })(i);
+        })(k);
+        k++;
     }
     if (pervyy >= 0) { nomer = pervyy; }
 })();
@@ -988,7 +1001,7 @@ function pokazatSpisok() {
 
 zvuk.onended = function () { oshibki = 0; sleduyushchiy(); };
 zvuk.onerror = function () {
-    
+    if (tracks[nomer] && tracks[nomer].getAttribute("data-radio")) { igraet = false; obnovit(); return; }
     oshibki++;
     if (oshibki < kolVidimyh()) { sleduyushchiy(); }
     else { igraet = false; obnovit(); }
