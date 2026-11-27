@@ -521,6 +521,60 @@ table.main { position: relative; z-index: 1; }
 .strelka-btn .strelka-txt { display: none; font-size: 20px; line-height: 24px; color: #fff3dc; }
 .okno.razvernut .strelka-btn img, .okno.razvernut .strelka-btn .strelka-txt { transform: rotate(180deg); }
 
+.blizhe {
+    display: block;
+    width: fit-content;
+    margin: 3px auto 0 auto;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10px;
+    color: #ffd47a;
+    text-shadow: 1px 1px 0 #2a1a08;
+}
+.okno a.blizhe:visited { color: #ffd47a; }
+.okno a.blizhe:hover { color: #fff6e0; background-color: #6a3a12; }
+
+#prosmotr {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(15,8,2,0.88);
+}
+#prosmotr.otkryt { display: flex; }
+.prosmotr-ramka {
+    border: 3px ridge #c9631a;
+    background-color: #2a1a10;
+    padding: 4px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.8);
+}
+.prosmotr-ramka img {
+    display: block;
+    max-width: calc(100vw - 100px);
+    max-height: calc(100vh - 100px);
+    border: 2px inset #8c8470;
+}
+#prosmotr-zakryt {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: #f2a354;
+    color: #3b2410;
+    border: 2px outset #ffd9a0;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+#prosmotr-zakryt:hover { background-color: #ffb866; }
+#prosmotr-zakryt:active { border-style: inset; }
+
 html, body, body * {
     cursor: url("cursorindex.png") 16 16, auto !important;
     cursor: -webkit-image-set(url("cursorindex.png") 1x, url("cursorindex@2x.png") 2x) 16 16, auto !important;
@@ -607,151 +661,181 @@ html, body, body * {
         <div class="etyud">
             <div class="ramka"><img src="etyud1.jpg" alt="Этюд 1" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд I</div>
+            <a class="blizhe" href="etyud1.jpg">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud2.webp" alt="Этюд 2" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд II</div>
+            <a class="blizhe" href="etyud2.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud3.webp" alt="Этюд 3" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд III</div>
+            <a class="blizhe" href="etyud3.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud4.webp" alt="Этюд 4" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд IV</div>
+            <a class="blizhe" href="etyud4.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud5.webp" alt="Этюд 5" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд V</div>
+            <a class="blizhe" href="etyud5.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud6.webp" alt="Этюд 6" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд VI</div>
+            <a class="blizhe" href="etyud6.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud7.webp" alt="Этюд 7" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд VII</div>
+            <a class="blizhe" href="etyud7.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud8.webp" alt="Этюд 8" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд VIII</div>
+            <a class="blizhe" href="etyud8.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud9.webp" alt="Этюд 9" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд IX</div>
+            <a class="blizhe" href="etyud9.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud10.webp" alt="Этюд 10" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд X</div>
+            <a class="blizhe" href="etyud10.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud11.webp" alt="Этюд 11" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XI</div>
+            <a class="blizhe" href="etyud11.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud12.webp" alt="Этюд 12" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XII</div>
+            <a class="blizhe" href="etyud12.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud13.webp" alt="Этюд 13" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XIII</div>
+            <a class="blizhe" href="etyud13.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud14.webp" alt="Этюд 14" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XIV</div>
+            <a class="blizhe" href="etyud14.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud15.webp" alt="Этюд 15" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XV</div>
+            <a class="blizhe" href="etyud15.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud16.webp" alt="Этюд 16" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XVI</div>
+            <a class="blizhe" href="etyud16.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud17.webp" alt="Этюд 17" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XVII</div>
+            <a class="blizhe" href="etyud17.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud18.webp" alt="Этюд 18" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XVIII</div>
+            <a class="blizhe" href="etyud18.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud19.webp" alt="Этюд 19" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XIX</div>
+            <a class="blizhe" href="etyud19.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud20.webp" alt="Этюд 20" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XX</div>
+            <a class="blizhe" href="etyud20.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud21.webp" alt="Этюд 21" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXI</div>
+            <a class="blizhe" href="etyud21.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud22.webp" alt="Этюд 22" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXII</div>
+            <a class="blizhe" href="etyud22.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud23.webp" alt="Этюд 23" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXIII</div>
+            <a class="blizhe" href="etyud23.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud24.webp" alt="Этюд 24" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXIV</div>
+            <a class="blizhe" href="etyud24.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud25.webp" alt="Этюд 25" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXV</div>
+            <a class="blizhe" href="etyud25.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud26.webp" alt="Этюд 26" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXVI</div>
+            <a class="blizhe" href="etyud26.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud27.webp" alt="Этюд 27" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXVII</div>
+            <a class="blizhe" href="etyud27.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud28.webp" alt="Этюд 28" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXVIII</div>
+            <a class="blizhe" href="etyud28.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud29.webp" alt="Этюд 29" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXIX</div>
+            <a class="blizhe" href="etyud29.webp">посмотреть поближе</a>
         </div>
 
         <div class="etyud">
             <div class="ramka"><img src="etyud30.webp" alt="Этюд 30" onerror="this.parentNode.parentNode.style.display='none'"></div>
             <div class="podpis">Этюд XXX</div>
+            <a class="blizhe" href="etyud30.webp">посмотреть поближе</a>
         </div>
 
     </div>
@@ -959,6 +1043,13 @@ html, body, body * {
 </div>
 
 
+<div id="prosmotr">
+    <div class="prosmotr-ramka">
+        <img id="prosmotr-kartina" src="" alt="">
+    </div>
+    <button type="button" id="prosmotr-zakryt" title="Закрыть">&times;</button>
+</div>
+
 <div id="podskazka"><b>Образы</b><br>Найди дверь внизу страницы.</div>
 <script type="text/javascript">
 function pokazPodskazku(e) { var p = document.getElementById("podskazka"); p.style.display = "block"; dvigPodskazku(e); }
@@ -1140,6 +1231,43 @@ obnovit();
     }
     window.addEventListener("resize", function () {
         for (var i = 0; i < oks.length; i++) { if (oks[i].classList.contains("razvernut")) { podognat(oks[i]); } }
+    });
+})();
+</script>
+<script type="text/javascript">
+(function () {
+    var prosmotr = document.getElementById("prosmotr");
+    var kartina = document.getElementById("prosmotr-kartina");
+    var etyudy = document.getElementById("etyudy");
+
+    function otkryt(adres, podpis) {
+        kartina.src = adres;
+        kartina.alt = podpis;
+        prosmotr.classList.add("otkryt");
+        document.documentElement.style.overflow = "hidden";
+    }
+
+    function zakryt() {
+        prosmotr.classList.remove("otkryt");
+        document.documentElement.style.overflow = "";
+        kartina.removeAttribute("src");
+    }
+
+    etyudy.addEventListener("click", function (e) {
+        if (!e.target.classList.contains("blizhe")) {
+            return;
+        }
+        e.preventDefault();
+        var etyud = e.target.parentNode.querySelector(".ramka img");
+        otkryt(e.target.href, etyud.alt);
+    });
+
+    prosmotr.addEventListener("click", zakryt);
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            zakryt();
+        }
     });
 })();
 </script>
