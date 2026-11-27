@@ -70,13 +70,23 @@ td.sidebar {
     z-index: 10;
     text-align: center;
 }
+.ramka3 {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 12px auto;
+    box-sizing: border-box;
+    border: 3px ridge #cf8a99;
+    padding: 4px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
 .kolonka img.st3 {
     display: block;
     width: auto;
     height: auto;
     max-width: 100%;
-    margin: 0 auto 14px auto;
-    border: 0;
+    margin: 0;
+    border: 2px inset #8c8470;
     background: none;
 }
 #kol-lev {
@@ -670,28 +680,28 @@ html, body, body * {
 
 
 <div class="kolonka" id="kol-lev">
-    <img class="st3" src="t3stop1.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop3.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop5.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop7.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop9.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop11.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop13.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop15.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop17.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop19.webp" alt="" onerror="this.style.display='none'">
+    <div class="ramka3"><img class="st3" src="t3stop1.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop3.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop5.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop7.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop9.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop11.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop13.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop15.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop17.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop19.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
 </div>
 <div class="kolonka" id="kol-prav">
-    <img class="st3" src="t3stop2.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop4.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop6.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop8.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop10.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop12.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop14.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop16.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop18.webp" alt="" onerror="this.style.display='none'">
-    <img class="st3" src="t3stop20.webp" alt="" onerror="this.style.display='none'">
+    <div class="ramka3"><img class="st3" src="t3stop2.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop4.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop6.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop8.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop10.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop12.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop14.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop16.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop18.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
+    <div class="ramka3"><img class="st3" src="t3stop20.webp" alt="" onerror="this.parentNode.style.display=\'none\'"></div>
 </div>
 
 
@@ -768,14 +778,22 @@ function skrytPodskazku() { document.getElementById("podskazka").style.display =
 
 <script type="text/javascript">
 function podognatPodstop() {
+    var GAP = 12, FRAME = 18, MAXH = 260, MINH = 50;
     var limit = document.querySelector("table.main").getBoundingClientRect().bottom;
     var cols = document.querySelectorAll(".kolonka");
     for (var c = 0; c < cols.length; c++) {
-        var f = cols[c].querySelectorAll("img.st3");
-        var hide = false;
-        for (var i = 0; i < f.length; i++) {
-            if (f[i].style.display === "none") { continue; }
-            if (hide || f[i].getBoundingClientRect().bottom > limit) { f[i].style.display = "none"; hide = true; }
+        var all = cols[c].querySelectorAll("img.st3");
+        var f = [];
+        for (var i = 0; i < all.length; i++) {
+            if (all[i].parentNode.style.display === "none" || !all[i].naturalWidth) { all[i].parentNode.style.display = "none"; continue; }
+            f.push(all[i]);
+        }
+        if (!f.length) { continue; }
+        var avail = limit - cols[c].getBoundingClientRect().top;
+        var h = Math.floor((avail - (GAP + FRAME) * f.length) / f.length);
+        h = Math.max(MINH, Math.min(MAXH, h));
+        for (var j = 0; j < f.length; j++) {
+            f[j].style.maxHeight = h + "px";
         }
     }
 }
