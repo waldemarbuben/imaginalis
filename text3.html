@@ -391,6 +391,24 @@ td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
 .snoska a { padding: 0 1px; }
 .snoska a, .ps p { scroll-margin-top: 140px; }
 .ps p:target { background-color: rgba(106,42,60,0.65); }
+
+/* --- разворот окон вниз (strelka.gif) --- */
+.okno { transition: height 0.35s ease; }
+.strelka-wrap {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 3px 0 2px 0;
+    background-color: rgba(10,6,2,0.45);
+    border-top: 2px groove rgba(255,255,255,0.25);
+}
+.strelka-btn {
+    display: inline-block;
+    border: 0; background: none; padding: 0;
+    cursor: pointer; line-height: 0;
+}
+.strelka-btn img { width: 32px; height: auto; border: 0; transition: transform 0.35s ease; }
+.strelka-btn .strelka-txt { display: none; font-size: 20px; line-height: 24px; color: #fff3dc; }
+.okno.razvernut .strelka-btn img, .okno.razvernut .strelka-btn .strelka-txt { transform: rotate(180deg); }
 </style>
 </head>
 <body>
@@ -729,5 +747,46 @@ function podognatPodstop() {
 window.addEventListener("load", podognatPodstop);
 </script>
 
+
+<script type="text/javascript">
+(function () {
+    var HEAD = 130, BOTTOM = 14;
+    function polnaya(w) {
+        var s = w.querySelector(".skroll"), h2 = w.querySelector("h2"), st = w.querySelector(".strelka-wrap");
+        return h2.offsetHeight + s.scrollHeight + st.offsetHeight + 8;
+    }
+    function podognat(w) {
+        var maxH = window.innerHeight - HEAD - BOTTOM;
+        w.style.height = Math.max(200, Math.min(polnaya(w), maxH)) + "px";
+    }
+    function svernut(w) {
+        w.classList.remove("razvernut");
+        w.style.height = "";
+    }
+    function razvernut(w) {
+        var top = w.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo(0, Math.max(0, top - HEAD));
+        w.classList.add("razvernut");
+        podognat(w);
+    }
+    var oks = document.querySelectorAll(".okno");
+    for (var i = 0; i < oks.length; i++) {
+        (function (w) {
+            var wrap = document.createElement("div");
+            wrap.className = "strelka-wrap";
+            wrap.innerHTML = '<button type="button" class="strelka-btn" title="Развернуть / свернуть">' +
+                '<img src="strelka.gif" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'inline\'">' +
+                '<span class="strelka-txt">&#9660;</span></button>';
+            w.appendChild(wrap);
+            wrap.firstChild.addEventListener("click", function () {
+                if (w.classList.contains("razvernut")) { svernut(w); } else { razvernut(w); }
+            });
+        })(oks[i]);
+    }
+    window.addEventListener("resize", function () {
+        for (var i = 0; i < oks.length; i++) { if (oks[i].classList.contains("razvernut")) { podognat(oks[i]); } }
+    });
+})();
+</script>
 </body>
 </html>
