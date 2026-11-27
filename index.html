@@ -503,7 +503,7 @@ table.main { position: relative; z-index: 1; }
     border: 0;
 }
 
-/* --- разворот окон вниз (strelka.gif) --- */
+
 .okno { transition: height 0.35s ease; }
 .strelka-wrap {
     flex: 0 0 auto;
@@ -960,12 +960,12 @@ function skrytPodskazku() { document.getElementById("podskazka").style.display =
 
 <script type="text/javascript">
 var zvuk = new Audio();
-var pesni = [];      /* песни */
-var stancii = [];    /* станции */
-var vybrano = null;  /* что выбрано */
-var oshibki = 0;     /* ошибки подряд */
+var pesni = [];      
+var stancii = [];    
+var vybrano = null;  
+var oshibki = 0;     
 
-/* диски вперемешку */
+
 function dobavitDisk(a) {
     var n = parseInt(a.getAttribute("href").replace(/\D/g, ""), 10) || 0;
     var disk = document.createElement("img");
@@ -1019,7 +1019,7 @@ function obnovit() {
 function stop() {
     zvuk.pause();
     if (eto_radio(vybrano)) {
-        /* отключаем эфир совсем */
+        
         zvuk.removeAttribute("src");
         zvuk.load();
     }
@@ -1051,7 +1051,7 @@ function nazhali(el) {
     vklyuchit(el);
 }
 
-/* только по песням */
+
 function sleduyushchaya() {
     if (!pesni.length) { return; }
     var n = 0;
