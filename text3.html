@@ -1,0 +1,733 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=1400">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>О здоровье и настроении — Вера Альпийская.</title>
+<style type="text/css">
+body {
+    background-color: #bdb6a6;
+    background-image: url("bg_t.jpg"); 
+    background-repeat: repeat;
+    color: #3b2410;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin: 0;
+    min-width: 1400px;
+    position: relative;
+    padding: 130px 0 0 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+#shapka {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1400px;
+    height: 116px;
+    background-color: #cfd0cc;
+    background-image: linear-gradient(rgba(224,150,172,0.20),rgba(224,150,172,0.20)), url("lenta.jpg"), url("bg_lace.jpg");
+    background-repeat: no-repeat, repeat-x, repeat;
+    background-size: 100% 100%, auto 14px, auto;
+    background-position: 0 0, left bottom, 0 0;
+    border-bottom: 3px ridge #cf8a99;
+    text-align: center;
+    z-index: 100;
+}
+#shapka img {
+    border: 0;
+    margin-top: 3px;
+    width: 760px;
+    height: 110px;
+}
+table.main {
+    width: 760px;
+    table-layout: fixed;
+    background-color: #fff3dc;
+    border: 4px ridge #cf8a99;
+}
+td.sidebar {
+    width: 190px;
+    background-color: #8c8470;
+    background-image: linear-gradient(rgba(6,12,14,0.30),rgba(6,12,14,0.30)), url("bg3_t.jpg"); 
+    background-repeat: repeat;
+    border-right: 2px groove #cf8a99;
+    padding: 14px;
+    vertical-align: top;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+    color: #fff0d2;
+    text-shadow: 1px 1px 0 #2a1a08;
+}
+.podstop img {
+    aspect-ratio: 146 / 153;
+    object-fit: cover;
+}
+
+td.content {
+    background-color: #6f6b68;
+    background-image: linear-gradient(rgba(10,20,24,0.22),rgba(10,20,24,0.22)), url("bg4_t.png"); 
+    background-repeat: repeat;
+    padding: 22px 28px;
+    color: #fff3dc;
+    text-shadow: -1px 0 #0d1a1e, 1px 0 #0d1a1e, 0 -1px #0d1a1e, 0 1px #0d1a1e, 1px 2px 3px rgba(0,0,0,0.6);
+    vertical-align: top;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #ffd3dd;
+    font-family: "Monotype Corsiva", "Apple Chancery", "Lucida Calligraphy", "URW Chancery L", cursive;
+    margin: 0 0 12px 0;
+    border-bottom: 1px solid #e0a3b3;
+    padding-bottom: 4px;
+}
+a { color: #b8470a; text-decoration: underline; }
+a:hover { color: #7a2a00; background-color: #ffd9a0; }
+a:visited { color: #8a3a14; }
+td.sidebar a, td.content a { color: #ffc6d4; }
+td.sidebar a:visited, td.content a:visited { color: #e8b3c4; }
+td.sidebar a:hover, td.content a:hover { color: #fff6f8; background-color: #6a2a3c; }
+td.content .box-inset a { color: #8a2a48; text-shadow: 0 0 4px rgba(235,225,205,0.45); }
+td.content .box-inset a:visited { color: #7a3a50; }
+td.content .box-inset a:hover { color: #fff6e0; background-color: transparent; }
+td.content a.btn-old, td.content a.btn-old:visited { color: #4a1a2a; text-shadow: none; }
+td.content a.btn-old:hover { color: #4a1a2a; background-color: #f4c1ce; }
+
+.box-inset {
+    background-color: #a9a597;
+    background-image: url("bg5_t.png");
+    background-repeat: repeat;
+    border: 2px inset #e0a3b3;
+    padding: 10px 14px;
+    margin: 16px 0;
+    color: #1d130b;
+    text-shadow: 0 0 4px rgba(235,225,205,0.45);
+}
+
+.statya {
+    margin: 0;
+}
+.statya a { font-size: 18px; }
+.data-st { font-style: italic; color: #ffc6d4; font-size: 13px; }
+.anons { margin-top: 4px; }
+.tekst p {
+    margin: 0 0 12px 0;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+.citata {
+    margin: 4px 0 14px 28px;
+    padding-left: 12px;
+    border-left: 2px solid #e0a3b3;
+    font-style: italic;
+}
+.ps {
+    margin: 18px 0 6px 0;
+    padding-top: 10px;
+    border-top: 1px solid #e0a3b3;
+}
+.ps h3 {
+    font-size: 21px;
+    font-weight: normal;
+    color: #ffd3dd;
+    font-family: "Monotype Corsiva", "Apple Chancery", "Lucida Calligraphy", "URW Chancery L", cursive;
+    margin: 0 0 8px 0;
+}
+.ps p { font-style: italic; }
+
+.lenta {
+    height: 40px;
+    margin: 6px 0 12px 0;
+    background-color: #cfcdc4;
+    background-image: linear-gradient(rgba(10,20,24,0.18),rgba(10,20,24,0.18)), url("lenta.jpg");
+    background-repeat: repeat-x;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.foto {
+    margin: 14px 0 0 0;
+    border: 3px ridge #cf8a99;
+    background-color: #2a1a10;
+    padding: 4px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
+.foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px inset #8c8470;
+}
+.cvetok {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.btn-old {
+    display: inline-block;
+    background-color: #e9b0bf;
+    color: #4a1a2a;
+    border: 2px outset #ffd9e2;
+    padding: 6px 16px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+.btn-old:visited { color: #4a1a2a; }
+.btn-old:hover { background-color: #f4c1ce; color: #4a1a2a; }
+.btn-old:active { border-style: inset; }
+.zemlya {
+    position: relative;
+    min-width: 1400px;
+    height: 215px;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+.zemlya::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 189px;
+    background-color: #555a5c;
+    background-image: linear-gradient(rgba(6,12,14,0.45),rgba(6,12,14,0.45)), url("bg7_t.jpg"); 
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 50px);
+}
+.podval {
+    width: 760px;
+    margin: 0 auto;
+    padding-top: 66px;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #1a1208;
+}
+.podval { position: relative; z-index: 2; }
+.podval a { color: #ffc6d4; }
+.plashka {
+    background-color: #555a5c;
+    background-image: linear-gradient(rgba(6,12,14,0.62),rgba(6,12,14,0.62)), url("bg6_t.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%, cover;
+    background-position: 0 0, center;
+    border: 2px inset #8c8470;
+    padding: 9px 11px;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #1a1208;
+}
+
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+::-webkit-scrollbar-track {
+    background-color: #2a1a10;
+    border-left: 1px solid #6a3a4a;
+    box-shadow: inset 2px 0 4px rgba(0,0,0,0.7);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #e3a1b2;
+    border: 1px solid #2a1a10;
+    box-shadow: inset 1px 1px 0 #ffdce5, inset -1px -1px 0 #a85468;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #f2b8c5;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: #2a1a10;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    html, .skroll {
+        scrollbar-color: #e3a1b2 #2a1a10;
+    }
+}
+
+
+.okno {
+    position: absolute;
+    top: 150px;
+    height: 520px; 
+    width: 260px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    border: 4px inset #b87686;
+    background-color: #6f6a52;
+    background-repeat: repeat;
+    box-shadow: inset 0 0 28px 6px rgba(10,5,0,0.7);
+}
+
+#poeziya {
+    right: 50%;
+    margin-right: 408px;
+    background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("bg8_t.jpg"); 
+}
+#etyudy {
+    width: 284px;
+    height: 640px;
+    left: 50%;
+    margin-left: 408px;
+    background-image: linear-gradient(rgba(6,12,14,0.60),rgba(6,12,14,0.60)), url("bg9_t.jpg"); 
+}
+.okno h2 {
+    font-size: 22px;
+    margin: 0;
+    padding: 6px 12px 4px 12px;
+    background-color: #6c6a68;
+    background-image: linear-gradient(rgba(8,12,14,0.55),rgba(8,12,14,0.55)), url("bg_lace.jpg");
+    background-repeat: repeat;
+    border-bottom: 2px groove #cf8a99;
+    text-shadow: 1px 1px 0 #2a2008;
+}
+.skroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 8px 12px 10px;
+}
+
+
+.stih {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #fff3dc;
+    text-shadow: 1px 1px 0 #2a2008;
+}
+.data {
+    text-align: right;
+    font-style: italic;
+    color: #ffc6d4;
+    margin-top: 6px;
+}
+.razdel {
+    text-align: center;
+    margin: 14px 0;
+}
+.razdel img {
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+
+.etyud {
+    margin: 0 0 18px 0;
+}
+.ramka {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 3px ridge #cf8a99;
+    background-color: #2a1a10;
+    padding: 4px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
+.ramka img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border: 2px inset #8c8470;
+}
+.podpis {
+    margin-top: 6px;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+    color: #fff0d2;
+    text-shadow: 1px 1px 0 #2a1a08;
+}
+
+#podskazka {
+    display: none; position: fixed; width: 210px; z-index: 70;
+    background-color: #555a5c;
+    background-image: linear-gradient(rgba(6,12,14,0.62),rgba(6,12,14,0.62)), url("bg6_t.jpg");
+    border: 3px ridge #cf8a99;
+    padding: 9px 11px;
+    font-family: Verdana, Arial, sans-serif; font-size: 11px; line-height: 1.6;
+    color: #fff3dc; text-shadow: 1px 1px 0 #1a1208;
+    pointer-events: none;
+}
+#podskazka b { color: #ffc6d4; }
+#obrazy { cursor: help; border-bottom: 1px dotted #e8b3c4; }
+.moneta { height: 22px; line-height: 22px; white-space: nowrap; }
+.moneta img { width: 19px; height: 26px; border: 0; margin: -6px 0 0 4px; vertical-align: middle; }
+.moneta a.bez-fona:hover { background-color: transparent; }
+.zov {
+    margin: 6px auto 0 auto;
+    padding: 4px 10px 4px 10px;
+    background-color: rgba(10,6,2,0.28);
+    width: 700px;
+    border-top: 1px solid rgba(255,198,212,0.35);
+    font-family: Georgia, "Palatino Linotype", serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #ffdbe4;
+    text-shadow: 1px 1px 2px #1a1208;
+}
+.zov a { color: #ffc6d4; }
+.snoska { line-height: 0; font-size: 12px; }
+.snoska a { padding: 0 1px; }
+.snoska a, .ps p { scroll-margin-top: 140px; }
+.ps p:target { background-color: rgba(106,42,60,0.65); }
+</style>
+</head>
+<body>
+
+
+<div id="shapka">
+    <a href="index.html"><img src="header_f.jpg" width="760" height="110" alt="IMAGINALIS.RU"></a>
+</div>
+
+
+<!-- 
+     заметка для потенция стихотворение, copy -
+    
+     <div class="razdel">...</div> + <div class="stih">...</div>
+     and - перед закрывающим </div></div>). -->
+<div class="okno" id="poeziya">
+    <h2>Поэзия</h2>
+    <div class="skroll">
+
+        <div class="stih">
+            В их волосах - оливковых - разорванные нити,<br>
+            В них пепел прерий, яд и терпкость темной соли.<br>
+            Смуглянками зовут их дети лисьи.<br>
+            Они ведут сквозь анфилады суеверий<br>
+            К триумфу высшей, запредельной боли.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Разъедай! Разъедай! - вдохновленное тело.<br>
+            Разъедай до излишков волос,<br>
+            Убегая коснись панцирями бело-саженцев опухающих Роз!<br>
+            На брусчатке мощенной грибами, на пруду - заволоченном рвами<br>
+            Отпускала Цирцея зубо-скаленных Львов!
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Утопает иссушенный фаллос, путаясь в тине титанических вод, - вместе с ним огрубленный разум мокротой пузырчатой - в кибелический грот.
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Сними свои шпильно-красные туфли! Окинь бирюзовым ногтем окружающий мир за класс первый, и когда ты, увидишь гангрену знамен, завопи не стесняясь -<br>
+            «Я ЛЮБЛЮ СОВ, ЖУРАВЛЕЙ И ВОРОН!!!»
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            В ленивой сонливости из обезвоженных кондиционеров плюются каплями голодного пота из резво вращающихся в полуденном салатово-резком зное страдающие вентиля. Они жадненько наползают друг на дружку, ревниво уворачиваясь обступая ветра, грохаются стеклянной дробью на алюминиевые головы карнизов, стремясь со-слоиться. Солнце, неразборчивое в своей щекотке, кажется &lt;…им…&gt; нависшей мельтешащей лампочкой
+            <div class="data">(1916)</div>
+        </div>
+
+        <div class="razdel"><img src="razdel.gif" width="314" height="50" alt=""></div>
+
+        <div class="stih">
+            Я - валик, я - шпатель, я строительный грунт, я известняк, я глина, я - повивальный пупок!
+            <div class="data">(1916)</div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ЭТЮДЫ / ЗАРИСОВКИ / НАБРОСКИ 
+      -->
+<div class="okno" id="etyudy">
+    <h2>Этюды</h2>
+    <div class="skroll">
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud1.jpg" alt="Этюд 1" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд I</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud2.webp" alt="Этюд 2" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд II</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud3.webp" alt="Этюд 3" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд III</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud4.webp" alt="Этюд 4" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд IV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud5.webp" alt="Этюд 5" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд V</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud6.webp" alt="Этюд 6" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд VI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud7.webp" alt="Этюд 7" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд VII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud8.webp" alt="Этюд 8" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд VIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud9.webp" alt="Этюд 9" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд IX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud10.webp" alt="Этюд 10" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд X</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud11.webp" alt="Этюд 11" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud12.webp" alt="Этюд 12" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud13.webp" alt="Этюд 13" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud14.webp" alt="Этюд 14" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XIV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud15.webp" alt="Этюд 15" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud16.webp" alt="Этюд 16" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XVI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud17.webp" alt="Этюд 17" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XVII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud18.webp" alt="Этюд 18" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XVIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud19.webp" alt="Этюд 19" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XIX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud20.webp" alt="Этюд 20" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud21.webp" alt="Этюд 21" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud22.webp" alt="Этюд 22" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud23.webp" alt="Этюд 23" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud24.webp" alt="Этюд 24" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXIV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud25.webp" alt="Этюд 25" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXV</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud26.webp" alt="Этюд 26" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXVI</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud27.webp" alt="Этюд 27" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXVII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud28.webp" alt="Этюд 28" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXVIII</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud29.webp" alt="Этюд 29" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXIX</div>
+        </div>
+
+        <div class="etyud">
+            <div class="ramka"><img src="etyud30.webp" alt="Этюд 30" onerror="this.parentNode.parentNode.style.display='none'"></div>
+            <div class="podpis">Этюд XXX</div>
+        </div>
+        
+    </div>
+</div>
+
+
+<center style="margin-bottom:30px;">
+<table class="main" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="sidebar">
+            <div class="plashka">
+                <b>Навигация:</b><br><br>
+                &raquo; <a href="index.html">Главная</a><br>
+                &raquo; <a href="texts.html">Тексты</a> <b>&lt;--</b><br>
+                &raquo; <span id="obrazy" onmouseover="pokazPodskazku(event)" onmousemove="dvigPodskazku(event)" onmouseout="skrytPodskazku()">Образы</span>
+                <hr size="1" color="#cf8a99" style="margin:14px 0;">
+                <b>----</b><br>
+                ---
+            </div>
+            <div class="foto"><img src="stopy.jpg" width="146" height="153" alt=""></div>
+            <div class="foto podstop"><img src="t3stop1.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop2.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop3.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop4.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop5.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop6.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop7.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop8.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop9.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop10.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop11.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop12.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop13.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop14.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop15.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop16.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop17.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop18.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop19.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+            <div class="foto podstop"><img src="t3stop20.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
+        </td>
+        <td class="content">
+            
+            <h2>О здоровье и настроении</h2>
+            <div class="data-st">(27 ноября 1916)</div>
+
+            <div class="tekst">
+                <p>Остеопатия, магнитопатия, иридодиагностика, исцеления верой и т. п. Для всех этих форм «альтернативной» медицины наш век совершенно не подходит. Дело в том, что с нежным внедрением в наше экзистенциальное поле технических приспособлений, уже начиная с первых мануфактур, мы стали считать калькулирующее мышление основным модусом вивенди центра человеческой экзистенции и те периферии, которые подобное расположение порождает. Я хочу сказать, что совершенно невообразимо, каким образом сегодня<sup class="snoska"><a id="ref1" href="#note1">1</a></sup> возможны подход и понимание здоровья, свойственные тому же Парацельсу, а значит, и всякое лечение посредством репрезентации или пародии традиционных форм врачевания без должного, очень трудного настроения. Ведь я полагаю, что именно в области настроения, расположения, уклонения может располагаться болезнь, которая, например, Парацельсом совершенно не воспринималась как сегодня, т. е. как нечто вирусное, неорганическое, чужое и инфицируемое. Дело в том, что широта монической человеческой экзистенции в XV–XVI веках, как мне подсказывает интуиция, могла<sup class="snoska"><a id="ref2" href="#note2">2</a></sup> вобрать в себя или быть выбранной всем тем спектром человеческих-природных-божественных умонастроений, что сдерживали ее от излишней звериной паники<sup class="snoska"><a id="ref3" href="#note3">3</a></sup>, начавшейся и продолжающейся при всевозможных эпидемиях, притом наш слишком рациональный век нисколько не замечает, что это нисколько не рациональная паника, доселе тем более мало представимая, как будто это может уже о чем-то таки и говорить, вам так не кажется? Невротизация и ретушь проблем смерти, самоубийства, крайних пограничных состояний, чем и являются оные, совершенно лишенные буфера; по крайней мере мы, художницы, опираясь только на свои силы, пытаемся исключительными вкраплениями вновь, хотя бы для себя, одухотворить, сделать мир заново живым, почувствовать и выразить сопричастность его дыханию. Я резюмирую тем, что, сколько бы современный дух времени не замалевывал подобный «страх» техническими эвфемизмами «заботы о безопасности», «управления рисками», «статистикой», все это применимо для кондового фордистского производства, но совершенно неприменимо к столь неуловимой человеческой экзистенции, душе, псюхе, а без нее о жизни говорить вообще нельзя, это не жизнь, а пародия на жизнь, ее репликация, ее ретрансляция, но не эманация. В итоге, употребив подобные эвфемизмы и понимая, что аффект не прожит и он не исцелен, как было в случае мистерий, растерянный человек ищет иррациональный выход, и как отлично он натыкается на волшебные таблетки, по итогу у нас получается, что калькулирующее мировоззрение не дает выхода, а «магическое» купируется, так как, само собой разумеется, ничего, кроме эффекта плацебо, это ему не даст, и здесь человек оказывается в не самой, но, пожалуй, лучшей, чем одна из двух этих крайностей, ситуации: он полностью разочарованный в двух картинах мира<sup class="snoska"><a id="ref4" href="#note4">4</a></sup>, получается, что магическое мышление становится для человека усложненным, перескакивающим все нюансы стероидным калькулирующим мышлением, и никакого отношения та пародия плацебо к магии или традиционной медицине не имеет, человек, уже разочарованный, оказывается впросак и молится, чтобы просто никогда не заболеть<sup class="snoska"><a id="ref5" href="#note5">5</a></sup>, чтобы в его вены не пытались ввести фиолетовую жижу, дабы «отстраненно» проверить, как дела в его почках или где-то еще, с большим риском стать овощем из-за даже уже не «рока», а обыкновенной технической ошибки, все смело разведут руками, пожмут плечами, напишут пару отчетов, а соседние коллеги из морга мигом прискачут вместе с могильщиками и граверами по памятникам, в принципе ясно, чем вызвана в нашем мире культивация инфантильности, ювенильности и т. д., потому что никто тебя не вылечит, если вдруг ты заболеешь, тонкие длительные человеческие связи сменились витиеватыми визитами к психологу, чтобы что? Чтобы понравиться такому же посетителю КПТ-терапии?<sup class="snoska"><a id="ref6" href="#note6">6</a></sup> Я не спорю, мне самой нравится та же юнгианская, а в особенности постюнгианская психология, в особенности Хиллман, но я не могу представить, чтобы такие фундаментальные вопросы о псюхе обсуждались в профессиональных, клинических или товарно-денежных отношениях, и я совершенно не понимаю, как это может быть поставлено на поток.</p>
+            </div>
+
+            <div class="ps">
+                <p id="note1"><a href="#ref1" title="Вернуться к тексту">1.</a> Под «сегодня» я и имею в виду ту целокупность настроенности экзистенциального плана всякого современного человека вне зависимости от декламируемых им ценностей, если он не проделал внутреннюю работу определенного характера либо если у него уже не было врожденной даймонической художественной предрасположенности к иному, моническому мировоззрению, или хотя бы не инструментальному, ведь наш сегодняшний человек полагает, даже прибегая к «традиционной» медицине: я совершу это действие, куплю сеанс или прочитаю молитву и получу измеримый точный результат в виде починки организма.</p>
+                <p id="note2"><a href="#ref2" title="Вернуться к тексту">2.</a> И для нее это было куда естественнее.</p>
+                <p id="note3"><a href="#ref3" title="Вернуться к тексту">3.</a> В то время человек не был изолированным субъектом, противостоящим внешнему миру объектов.</p>
+                <p id="note4"><a href="#ref4" title="Вернуться к тексту">4.</a> Не подозревая, что магическое мышление, может, и верно, но из-за неправильной настроенности оно просто не подействовало так, как он ожидал от него, то есть что оно будет работать по законам алгоритмичной равномерности, то есть на одно действие обязательно будет приходить с такой же периодичностью противодействие.</p>
+                <p id="note5"><a href="#ref5" title="Вернуться к тексту">5.</a> Или вдруг не поставили ложный диагноз.</p>
+                <p id="note6"><a href="#ref6" title="Вернуться к тексту">6.</a> Я разделяю КПТ-терапию и психоанализ Юнга и не ставлю между ними знак равенства.</p>
+            </div>
+
+            <div class="lenta"></div>
+
+            <p align="center">
+                <a href="texts.html" class="btn-old">&larr; К списку текстов</a>
+            </p>
+        </td>
+    </tr>
+</table>
+</center>
+
+<div class="zemlya">
+
+<img class="cvetok" src="starflower3.png" width="128" height="128" alt="" style="margin-left:-700px;">
+<img class="cvetok" src="starflower4.png" width="128" height="128" alt="" style="margin-left:-585px;">
+<img class="cvetok" src="starflower2.png" width="128" height="128" alt="" style="margin-left:455px;">
+<img class="cvetok" src="starflower4.png" width="128" height="128" alt="" style="margin-left:570px; transform:scaleX(-1);">
+<div class="podval">
+     &copy; Вера Альпийская &bull; <br>
+    &copy; imaginalis.ru<br>
+    <i>Образы составляют само психическое в его имагинативной видимости, то есть самоценны.</i>
+    <div class="moneta">
+        <a href="https://yoomoney.ru/fundraise/1LE9Q299CDA.261109" target="_blank" rel="noopener">Бросить монетку в колодец (на краски, кофе и книги)</a>
+        (если не переходит, отключи VPN)<a class="bez-fona" href="https://yoomoney.ru/fundraise/1LE9Q299CDA.261109" target="_blank" rel="noopener"><img src="colodec.gif" width="19" height="26" alt="Колодец"></a>
+    </div>
+    <div class="zov">
+        Буду рад живым, тонко чувствующим людям, прекрасным дамам и всем, кому близок этот мир. Если мои тексты, картины, стихи или образы отозвались - пишите смело. Остальных прошу не беспокоить....<br>
+        <a href="mailto:vera@imaginalis.ru">vera@imaginalis.ru</a>
+    </div>
+</div>
+</div>
+
+<div id="podskazka"><b>Образы</b><br>Найди дверь внизу страницы.</div>
+<script type="text/javascript">
+function pokazPodskazku(e) { var p = document.getElementById("podskazka"); p.style.display = "block"; dvigPodskazku(e); }
+function dvigPodskazku(e) { var p = document.getElementById("podskazka"); p.style.left = (e.clientX + 16) + "px"; p.style.top = (e.clientY + 16) + "px"; }
+function skrytPodskazku() { document.getElementById("podskazka").style.display = "none"; }
+</script>
+
+<script type="text/javascript">
+function podognatPodstop() {
+    var c = document.querySelector("td.content");
+    var last = c.lastElementChild;
+    var limit = last.getBoundingClientRect().bottom;
+    var f = document.querySelectorAll(".podstop");
+    var hide = false;
+    for (var i = 0; i < f.length; i++) {
+        if (f[i].style.display === "none") { continue; }
+        if (hide || f[i].getBoundingClientRect().bottom > limit) { f[i].style.display = "none"; hide = true; }
+    }
+}
+window.addEventListener("load", podognatPodstop);
+</script>
+
+</body>
+</html>
